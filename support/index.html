@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Support · Coverage Field Kit</title>
+<meta name="description" content="Get help with Coverage Field Kit.">
+<link rel="canonical" href="https://coverage-app.xyz/support/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0b0d10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Coverage Field Kit">
+<meta property="og:title" content="Support · Coverage Field Kit">
+<meta property="og:description" content="Get help with Coverage Field Kit.">
+<meta property="og:url" content="https://coverage-app.xyz/support/">
+<meta property="og:image" content="https://coverage-app.xyz/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root { --paper:#f6f2e8; --card:#fbf8ef; --ink:#14110d; --ink-2:#423d34; --meta:#6e6759; --rule:#dcd4c1; --rule-2:#cec5ae; --accent:#0e7490; --accent-ink:#075364;
+    --serif:"Instrument Serif","Iowan Old Style","Times New Roman",serif; --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace; color-scheme: light; }
+  @media (prefers-color-scheme: dark) { :root { --paper:#0b0b0d; --card:#121217; --ink:#f4efe3; --ink-2:#cec6b6; --meta:#948b7a; --rule:#25251f; --rule-2:#34342e; --accent:#67e8f9; --accent-ink:#a5f3fc; color-scheme: dark; } }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent-ink); text-underline-offset: 3px; text-decoration-color: var(--rule-2); word-break: break-word; }
+  .page { max-width: 720px; margin: 0 auto; padding-inline: 22px; padding-block: calc(40px + env(safe-area-inset-top, 0px)) calc(96px + env(safe-area-inset-bottom, 0px)); }
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
+  .mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -0.05em; text-transform: uppercase; font-size: 14px; color: var(--ink); text-decoration: none; }
+  .top nav { display: flex; gap: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .top nav a { color: var(--meta); text-decoration: none; }
+  .top nav a[aria-current="page"], .top nav a:hover { color: var(--accent-ink); }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6.6vw, 60px); line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 18px; text-wrap: balance; }
+  h1 em { color: var(--accent-ink); }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--meta); padding-top: 16px; border-top: 1px solid var(--rule); margin-bottom: 30px; }
+  .meta strong { color: var(--ink-2); font-weight: 500; }
+  .toc { border-bottom: 1px solid var(--rule); padding-bottom: 16px; margin-bottom: 26px; }
+  .toc .eb, .card .eb { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; font-size: 13.5px; }
+  @media (max-width: 560px) { .toc ol { columns: 1; } }
+  .toc li { break-inside: avoid; margin-bottom: 3px; color: var(--meta); }
+  .doc h2 { font-family: var(--serif); font-weight: 400; font-size: 27px; line-height: 1.15; margin: 38px 0 12px; scroll-margin-top: 16px; text-wrap: balance; }
+  .doc h3 { font-size: 15px; margin: 22px 0 6px; }
+  .doc p, .doc li { color: var(--ink-2); }
+  .doc p { margin: 0 0 12px; }
+  .doc ul { padding-left: 20px; margin: 0 0 14px; }
+  .doc li { margin-bottom: 6px; }
+  .doc li::marker { color: var(--accent); }
+  .doc strong { color: var(--ink); }
+  .doc hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
+  .mail { font-family: var(--mono); font-size: 0.92em; color: var(--ink); user-select: all; }
+  code { font-family: var(--mono); font-size: 0.9em; }
+  .card { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 20px 22px; margin-bottom: 16px; }
+  .card p { margin: 0 0 8px; color: var(--ink-2); }
+  .card p:last-child { margin-bottom: 0; }
+  .big { font-family: var(--mono); font-size: 17px; color: var(--ink); user-select: all; }
+  footer { margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--meta); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: var(--meta); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top"><a class="mark" href="/"><svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="var(--accent)" stroke-width="9"/><line x1="82" y1="18" x2="18" y2="82" stroke="var(--accent)" stroke-width="9" stroke-linecap="round"/></svg>Coverage</a><nav aria-label="Pages"><a href="/support/" aria-current="page">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/legal/">Legal notice</a></nav></div>
+  <h1>Support</h1>
+  <div class="meta"><span><strong>App</strong> Coverage Field Kit · iOS</span><span><strong>Developer</strong> Daniel Ocanto</span></div>
+  <div class="card">
+    <div class="eb">Email</div>
+    <p class="big">support@coverage-app.xyz</p>
+    <p>Bugs, questions, lens or rental-house corrections, press and beta requests. Answers within two working days.</p>
+  </div>
+  <div class="card">
+    <div class="eb">Phone and post</div>
+    <p>+34 635 26 77 98</p>
+    <p>Daniel Ocanto<br>Calle del Duque de Tovar 15, 4L, 28005 Madrid, Spain</p>
+  </div>
+  <article class="doc">
+    <h2>Common questions</h2>
+    <h3>A lens spec or a rental house listing is wrong</h3>
+    <p>Email the lens, the camera and what's wrong; a link to the maker's or the rental house's own page helps. Corrections go into the next catalogue update.</p>
+    <h3>How do I delete my account?</h3>
+    <p>In the app, open Profile and tap DELETE ACCOUNT. This removes your sign-in and everything synced to it. Shots and LUTs on your device stay until you delete the app.</p>
+    <h3>Do I need an account?</h3>
+    <p>No. Everything works on your device without one. An account only syncs your theme, favourites and projects between devices.</p>
+    <h3>Where are my shots stored?</h3>
+    <p>On your device only. They leave it when you share or export them yourself.</p>
+  </article>
+  <footer><span>Coverage Field Kit</span><span><a href="/">Home</a></span></footer>
+</div>
+</body>
+</html>
