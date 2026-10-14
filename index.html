@@ -298,29 +298,21 @@
   .papers:hover .paper.portrait { transform: rotate(-8deg) translate(-6%, -2%); }
   .papers:hover .paper.land { transform: rotate(5deg) translate(4%, 4%); }
 
-  /* ── viewfinder mock ────────────────────────────────── */
-  /* Dusk exterior stand-in until real viewfinder captures replace it. */
-  .vf { position: relative; width: 100%; height: 100%; background:
-      linear-gradient(180deg, #0e1622 0%, #23364a 34%, #6d6a6a 50%, #d08a4c 57%, #3a2a1c 58.5%, #15110d 72%, #08090b 100%); }
-  .vf::before { content: ""; position: absolute; left: 0; right: 0; top: 52%; height: 9%;
-    background: linear-gradient(180deg, transparent, rgba(8,9,11,0.9));
-    clip-path: polygon(0 100%, 0 60%, 8% 35%, 15% 55%, 24% 20%, 33% 50%, 41% 40%, 52% 70%, 63% 30%, 71% 52%, 80% 25%, 90% 55%, 100% 40%, 100% 100%); }
-  .vf .frame { position: absolute; left: 50%; top: 9%; height: 82%; aspect-ratio: 3 / 2; translate: -50% 0; border: 1px solid rgba(34,211,238,0.55); overflow: hidden;
-    box-shadow: 0 0 0 100vmax rgba(5,6,8,0.55);
-    background: radial-gradient(ellipse 72% 80% at 50% 50%, transparent 52%, rgba(0,0,0,0.7) 100%); }
-  .vf .fl { position: absolute; left: 0; right: 0; top: 50%; height: 62.8%; translate: 0 -50%; border-block: 1.5px solid var(--signal); }
-  .vf .fl::after { content: "2.39"; position: absolute; left: 8px; top: 4px; font: 500 10px var(--mono); color: var(--signal); }
-  .vf .cross { position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; translate: -50% -50%;
-    background: linear-gradient(var(--signal), var(--signal)) center / 1.5px 100% no-repeat, linear-gradient(var(--signal), var(--signal)) center / 100% 1.5px no-repeat; opacity: 0.8; }
-  .vf .hud { position: absolute; z-index: 2; left: 0; right: 0; display: flex; justify-content: center; gap: clamp(8px, 2vw, 26px); font: 500 clamp(7px, 1.05vw, 12px) var(--mono); letter-spacing: 0.14em; color: rgba(242,237,226,0.7); flex-wrap: wrap; }
-  .vf .hud.top { top: 3.5%; } .vf .hud.bot { bottom: 3.5%; }
-  .vf .hud b { color: var(--cream); font-weight: 500; }
-  @media (max-width: 640px) { .vf .hud .opt { display: none; } }
-  .vf .shutter { position: absolute; z-index: 2; right: 3.5%; top: 50%; translate: 0 -50%; width: 7%; aspect-ratio: 1; border-radius: 50%; border: 3px solid var(--cream); box-shadow: inset 0 0 0 3px #000, inset 0 0 0 30px var(--cream); }
-  .vf .rec { display: inline-flex; gap: 6px; align-items: center; color: var(--cream); }
-  .vf .rec::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: blink 1.4s ease-in-out infinite; }
-  @keyframes blink { 50% { opacity: 0.25; } }
-  .vf-note { font-family: var(--mono); font-size: 11px; color: var(--fog); letter-spacing: 0.1em; text-transform: uppercase; }
+  /* ── viewfinder ─────────────────────────────────────── */
+  /* Phone captures of the viewfinder; one at a time, picked below. */
+  .vf-stack { display: grid; }
+  .vf-stack img { grid-area: 1 / 1; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 700ms var(--ease); }
+  .vf-stack img.on { opacity: 1; }
+  .vf-pick { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(8px, 1.4vw, 16px); margin-top: clamp(16px, 2.4vw, 28px); }
+  .vf-pick button { all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .vf-pick img { width: 100%; aspect-ratio: 2000 / 920; object-fit: cover; border-radius: 10px; border: 1px solid var(--rule); opacity: 0.55; transition: opacity 300ms ease, border-color 300ms ease; }
+  .vf-pick span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fog); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .vf-pick button:hover img, .vf-pick button.on img { opacity: 1; }
+  .vf-pick button.on img { border-color: color-mix(in srgb, var(--signal) 60%, transparent); }
+  .vf-pick button.on span { color: var(--signal); }
+  .vf-pick button:focus-visible img { outline: 2px solid var(--signal); outline-offset: 2px; }
+  @media (max-width: 520px) { .vf-pick span { display: none; } }
+  .vf-log { margin-top: clamp(64px, 9vw, 120px); }
 
   /* ── roles ──────────────────────────────────────────── */
   .roles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border-block: 1px solid var(--rule); }
@@ -497,7 +489,7 @@
         <h2>Built for <span class="grad">prep</span>, carried to set.</h2>
       </div>
       <div class="cards" tabindex="0" aria-label="Scroll through app previews">
-        <article class="card reveal"><div class="k">Any lens on<strong>any <em>sensor</em></strong></div><div class="phone"><div class="screen"><div class="sb" style="--sb:#141316"><span>9:41</span><i></i></div><img src="img/home.webp" alt="Home screen with the current setup" width="720" height="1561" loading="lazy"></div><div class="island"></div></div></article>
+        <article class="card reveal"><div class="k">Any lens on<strong>any <em>sensor</em></strong></div><div class="phone"><div class="screen"><div class="sb" style="--sb:#131315"><span>9:41</span><i></i></div><img src="img/home.webp" alt="Home screen with the current setup" width="720" height="1561" loading="lazy"></div><div class="island"></div></div></article>
         <article class="card reveal"><div class="k">Search by<strong>the <em>set</em></strong></div><div class="phone"><div class="screen"><div class="sb" style="--sb:#080808"><span>9:41</span><i></i></div><img src="img/picker-search-sets.webp" alt="Lens search returning the ZEISS Supreme Prime set" width="720" height="1561" loading="lazy"></div><div class="island"></div></div></article>
         <article class="card reveal"><div class="k">Who rents<strong>this <em>lens?</em></strong></div><div class="phone"><div class="screen"><div class="sb" style="--sb:#080808"><span>9:41</span><i></i></div><img src="img/rent-this-lens-k35.webp" alt="Rental houses carrying the TLS Canon K35, by country" width="720" height="1561" loading="lazy"></div><div class="island"></div></div></article>
         <article class="card reveal"><div class="k">Projects for<strong>the whole <em>crew</em></strong></div><div class="phone"><div class="screen"><div class="sb" style="--sb:#605e5a"><span>9:41</span><i></i></div><img src="img/project-detail.webp" alt="Project with credits and a Cooke S7/i lens list" width="720" height="1561" loading="lazy"></div><div class="island"></div></div></article>
@@ -517,7 +509,7 @@
         <div class="queries" aria-label="Search examples">
           <div class="q"><span class="in">supreme</span><span class="out">ZEISS Supreme Prime · 13 focals</span></div>
           <div class="q"><span class="in">supreme 18</span><span class="out">Supreme Prime 18mm · T1.5</span></div>
-          <div class="q"><span class="in">k35</span><span class="out">Canon, Cineovision, GL Optics, TLS, Zero Optik</span></div>
+          <div class="q"><span class="in">k35</span><span class="out">Canon, Cineovision, Clairmont, GL Optics, TLS, Todd-AO</span></div>
         </div>
       </div>
       <div class="trio reveal">
@@ -585,16 +577,31 @@
         <p class="lede">The phone's cameras zoom to the exact field of view of the cine lens on your sensor, with its falloff, framelines and camera settings drawn over the live image. Stills and clips save with tilt, dutch angle, compass heading, GPS and camera height.</p>
       </div>
       <div class="landscape reveal">
-        <div class="screen">
-          <div class="vf" role="img" aria-label="Viewfinder interface: camera settings across the top, a 2.39 frameline over the live picture, lens and sensor across the bottom">
-            <div class="hud top"><span class="rec">REC 00:00:12</span><span>FPS <b>24</b></span><span>SHUTTER <b>172.8°</b></span><span>IRIS <b>T1.8</b></span><span>EI <b>800</b></span><span class="opt">WB <b>4300K</b></span><span class="opt">TILT <b>−3°</b></span><span class="opt">HEIGHT <b>1.52 m</b></span></div>
-            <div class="frame"><div class="fl"></div><div class="cross"></div></div>
-            <div class="shutter"></div>
-            <div class="hud bot"><span>LENS <b>ARRI Signature Prime</b></span><span class="opt">SENSOR <b>Alexa Mini LF · LF Open Gate</b></span><span>FCL <b>25mm</b></span><span class="opt">FOCUS <b>2.4m</b></span></div>
-          </div>
+        <div class="screen vf-stack" id="vfStack">
+          <img class="on" src="img/vf-boats.webp" alt="Viewfinder framing two rowing boats on rippled water at 2.39, with camera settings across the top and the lens and sensor below" width="2000" height="920">
+          <img src="img/vf-lamp.webp" alt="Viewfinder framing a lamp and window light in a dark room at 2.39, with camera settings across the top and the lens and sensor below" width="2000" height="920" loading="lazy">
+          <img src="img/vf-signs.webp" alt="Viewfinder framing road signs on a traffic island in open country at 2.39, with camera settings across the top and the lens and sensor below" width="2000" height="920" loading="lazy">
+          <img src="img/vf-cliff.webp" alt="Viewfinder framing a lone walker on a black-and-white sea cliff at 2.39, with camera settings across the top and the lens and sensor below" width="2000" height="920" loading="lazy">
         </div>
       </div>
-      <p class="vf-note" style="margin-top:16px">Illustration</p>
+      <div class="vf-pick" id="vfPick" role="tablist" aria-label="Viewfinder frames">
+        <button type="button" role="tab" aria-selected="true" class="on" data-i="0"><img src="img/vf-boats.webp" alt="" width="2000" height="920" loading="lazy"><span>Harbour</span></button>
+        <button type="button" role="tab" aria-selected="false" data-i="1"><img src="img/vf-lamp.webp" alt="" width="2000" height="920" loading="lazy"><span>Interior</span></button>
+        <button type="button" role="tab" aria-selected="false" data-i="2"><img src="img/vf-signs.webp" alt="" width="2000" height="920" loading="lazy"><span>Roadside</span></button>
+        <button type="button" role="tab" aria-selected="false" data-i="3"><img src="img/vf-cliff.webp" alt="" width="2000" height="920" loading="lazy"><span>Coast</span></button>
+      </div>
+
+      <div class="row flip vf-log">
+        <div class="copy">
+          <span class="eyebrow">Shot log</span>
+          <h3>Every frame keeps its <span class="grad">lens</span> and look.</h3>
+          <p>Each still lands in the gallery with the lens, sensor, framelines, focus and camera settings it was shot with, filed under the project. Export the lot as a shot list PDF.</p>
+        </div>
+        <div class="duo reveal">
+          <div class="phone"><div class="screen"><div class="sb" style="--sb:#17181a"><span>9:41</span><i></i></div><img src="img/shot-detail.webp" alt="Shot detail: a saved frame with its lens, sensor, framelines, focus and camera settings" width="720" height="1561" loading="lazy"></div><div class="island"></div></div>
+          <div class="phone"><div class="screen"><div class="sb" style="--sb:#131315"><span>9:41</span><i></i></div><img src="img/home.webp" alt="Home screen with the current setup and recent shots" width="720" height="1561" loading="lazy"></div><div class="island"></div></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -675,6 +682,26 @@
         }
       }, { rootMargin: "-45% 0px -45% 0px" });
       steps.forEach((s) => io.observe(s));
+    }
+
+    // Viewfinder frames: the picker swaps the frame; it advances on its own
+    // while in view until the visitor picks one.
+    const vfImgs = [...document.querySelectorAll("#vfStack img")];
+    const vfBtns = [...document.querySelectorAll("#vfPick button")];
+    if (vfImgs.length) {
+      let cur = 0, timer = 0, picked = false;
+      const show = (i) => {
+        cur = i;
+        vfImgs.forEach((im, k) => im.classList.toggle("on", k === i));
+        vfBtns.forEach((b, k) => { b.classList.toggle("on", k === i); b.setAttribute("aria-selected", k === i ? "true" : "false"); });
+      };
+      vfBtns.forEach((b, k) => b.addEventListener("click", () => { picked = true; clearInterval(timer); show(k); }));
+      if (!reduce && "IntersectionObserver" in window) {
+        new IntersectionObserver(([e]) => {
+          clearInterval(timer);
+          if (e.isIntersecting && !picked) timer = setInterval(() => show((cur + 1) % vfImgs.length), 4500);
+        }, { threshold: 0.4 }).observe(document.getElementById("vfStack"));
+      }
     }
 
     // Hero parallax: phones lean toward the pointer (desktop only).
