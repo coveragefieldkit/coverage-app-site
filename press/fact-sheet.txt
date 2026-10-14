@@ -10,7 +10,7 @@ viewfinder on your phone, and find who rents it.
 
 FACTS
 -----
-App              Coverage Field Kit
+App              Coverage (App Store name: Coverage Field Kit)
 Platform         iPhone
 Release          3 November 2026, App Store
 Price            Free download with a 7-day trial, then a one-time purchase
@@ -29,7 +29,7 @@ Instagram        @coverageapp__ (instagram.com/coverageapp__)
 
 ABOUT
 -----
-Coverage Field Kit is an iPhone app for the camera department. Pick a
+Coverage is an iPhone app for the camera department. Pick a
 camera, a sensor mode and a lens, and it draws the image circle that lens
 throws onto that sensor, to scale, with light falloff and a warning when
 the corners vignette. The catalog holds 2,075 cine lenses, 71 camera
@@ -41,7 +41,7 @@ live image. Stills and clips are saved with the lens, framelines, focus,
 camera settings, tilt, compass heading and GPS. Every lens page lists the
 rental houses that carry it: 474 in 73 countries.
 
-Coverage Field Kit is made by Daniel Ocanto Hernandez, an independent
+Coverage is made by Daniel Ocanto Hernandez, an independent
 developer. It is out on the App Store on 3 November 2026.
 
 
