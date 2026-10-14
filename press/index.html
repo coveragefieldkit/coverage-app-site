@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Press kit · Coverage Field Kit</title>
+<meta name="description" content="Press kit for Coverage Field Kit, the camera department's field kit for iPhone: fact sheet, App Store screenshots, viewfinder frames, app icon and press contact. Out on the App Store 3 November 2026.">
+<link rel="canonical" href="https://coverage-app.xyz/press/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0b0d10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Coverage Field Kit">
+<meta property="og:title" content="Press kit · Coverage Field Kit">
+<meta property="og:description" content="Fact sheet, screenshots, viewfinder frames, app icon and press contact for Coverage Field Kit, out on the App Store 3 November 2026.">
+<meta property="og:url" content="https://coverage-app.xyz/press/">
+<meta property="og:image" content="https://coverage-app.xyz/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Same projection-booth ground as the home page: coal, cream type, cyan
+     signal. One 1240px column; every asset links to the file it shows. */
+  :root {
+    --coal: #0b0d10;
+    --coal-2: #101318;
+    --coal-3: #151a20;
+    --rule: #1e2328;
+    --rule-2: #2b3138;
+    --cream: #f2ede2;
+    --cream-dim: #b8b3a6;
+    --fog: #7a766d;
+    --aperture: #a5f3fc;
+    --signal: #22d3ee;
+    --optic: #0891b2;
+    --deep: #155e75;
+    --amber: #f59e0b;
+    --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+    --sans: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --gutter: clamp(16px, 4vw, 48px);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--coal);
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+  ::selection { background: var(--optic); color: var(--cream); }
+  :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); }
+  [id] { scroll-margin-top: 84px; }
+
+  /* ── type ───────────────────────────────────────────── */
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--signal);
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(40px, 5.6vw, 76px); line-height: 0.98; }
+  .grad {
+    font-style: italic;
+    background: linear-gradient(120deg, var(--aperture), var(--signal) 45%, var(--optic));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lede { font-size: clamp(17px, 1.5vw, 20px); color: var(--cream-dim); max-width: 50ch; margin: 0; }
+  .mono { font-family: var(--mono); }
+
+  /* ── nav ────────────────────────────────────────────── */
+  .nav {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+    background: color-mix(in srgb, var(--coal) 72%, transparent);
+    -webkit-backdrop-filter: blur(20px) saturate(1.3); backdrop-filter: blur(20px) saturate(1.3);
+    border-bottom: 1px solid transparent; transition: border-color 300ms ease;
+  }
+  .nav.scrolled { border-bottom-color: var(--rule); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .wordmark { font-weight: 900; letter-spacing: -0.06em; text-transform: uppercase; font-size: 18px; line-height: 1; }
+  .brand .sub { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fog); padding-left: 10px; border-left: 1px solid var(--rule-2); }
+  .nav-links { display: flex; gap: 28px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dim); }
+  .nav-links a { transition: color 200ms ease; }
+  .nav-links a:hover { color: var(--cream); }
+  @media (max-width: 960px) { .nav-links { display: none; } }
+  @media (max-width: 440px) { .brand .sub { display: none; } }
+  .nav .btn-sm { white-space: nowrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 14px;
+    transition: transform 300ms var(--ease), background 250ms ease, border-color 250ms ease, color 250ms ease;
+    border: 1px solid transparent; cursor: pointer;
+  }
+  .btn-primary { background: var(--signal); color: var(--coal); }
+  .btn-primary:hover { background: var(--aperture); transform: translateY(-2px); }
+  .btn-ghost { border-color: var(--rule-2); color: var(--cream); }
+  .btn-ghost:hover { border-color: var(--signal); color: var(--signal); transform: translateY(-2px); }
+  .btn-sm { padding: 9px 18px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .btn .arr { transition: transform 300ms var(--ease); }
+  .btn:hover .arr { transform: translateY(3px); }
+  .btn .meta { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.72; }
+
+  /* ── hero ───────────────────────────────────────────── */
+  .hero { position: relative; padding-block: clamp(48px, 8vw, 104px) clamp(40px, 6vw, 72px); overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -20% -10% auto auto; width: 70vw; height: 70vw; max-width: 900px; max-height: 900px;
+    background: radial-gradient(circle, rgba(34,211,238,0.12), transparent 62%); pointer-events: none;
+  }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; position: relative; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero-copy { display: flex; flex-direction: column; gap: 26px; min-width: 0; }
+  .hero h1 { font-size: clamp(56px, 8vw, 116px); line-height: 0.9; letter-spacing: -0.035em; }
+  .hero h1 .line { display: block; }
+  .tagline { font-family: var(--serif); font-size: clamp(28px, 2.8vw, 40px); line-height: 1.05; letter-spacing: -0.01em; margin: 0; color: var(--cream); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .readout {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; color: var(--fog);
+    display: flex; flex-wrap: wrap; gap: 6px 16px; text-transform: uppercase; margin: 0;
+  }
+  .readout b { color: var(--cream-dim); font-weight: 500; }
+  .readout .on { color: var(--signal); }
+  .stage { position: relative; width: 100%; max-width: 520px; aspect-ratio: 1; margin-inline: auto; display: grid; place-items: center; }
+  @media (max-width: 900px) { .stage { max-width: 420px; } }
+  .stage svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+  .stage svg circle, .stage svg rect, .stage svg line { fill: none; vector-effect: non-scaling-stroke; }
+  .stage svg text { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; fill: var(--fog); }
+  .stage .icon {
+    width: 46%; aspect-ratio: 1; border-radius: 22.5%; position: relative; z-index: 1;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 50px 100px -30px rgba(34,211,238,0.35), 0 30px 60px -20px rgba(0,0,0,0.8);
+  }
+
+  /* Load sequence: runs once, ends fully visible. */
+  .rise { animation: rise 1100ms var(--ease) both; animation-delay: calc(var(--d, 0) * 90ms); }
+  @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s var(--ease) 300ms forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  /* ── numbers ────────────────────────────────────────── */
+  .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--rule); }
+  @media (max-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .stat { padding: 30px 22px 26px; display: flex; flex-direction: column; gap: 6px; border-left: 1px solid var(--rule); min-width: 0; }
+  .stat:first-child { border-left: 0; }
+  @media (max-width: 760px) { .stat:nth-child(3) { border-left: 0; } .stat:nth-child(n+3) { border-top: 1px solid var(--rule); } }
+  @media (max-width: 420px) { .stat { padding-inline: 14px; } }
+  .stat .n { font-family: var(--serif); font-size: clamp(44px, 5.4vw, 76px); line-height: 0.95; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .stat .l { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fog); }
+
+  /* ── section scaffold ───────────────────────────────── */
+  section.block { padding-block: clamp(72px, 10vw, 136px) 0; }
+  .head { display: flex; flex-direction: column; gap: 22px; margin-bottom: clamp(36px, 5vw, 60px); max-width: 860px; }
+
+  /* ── about + fact sheet ─────────────────────────────── */
+  .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(36px, 6vw, 96px); align-items: start; }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; } }
+  .about .copy { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+  .boiler p { margin: 0 0 14px; color: var(--cream-dim); max-width: 56ch; }
+  .boiler p:last-child { margin-bottom: 0; }
+  .boiler-foot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fog); }
+  .sheet { margin: 0; border-top: 1px solid var(--rule); }
+  .sheet > div { display: grid; grid-template-columns: 11.5em minmax(0, 1fr); gap: 6px 20px; padding-block: 13px; border-bottom: 1px solid var(--rule); }
+  .sheet dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fog); padding-top: 4px; }
+  .sheet dd { margin: 0; font-size: 15.5px; color: var(--cream); overflow-wrap: anywhere; }
+  .sheet dd small { display: block; font-size: 13.5px; color: var(--cream-dim); }
+  .sheet .hl { color: var(--signal); }
+  @media (max-width: 520px) { .sheet > div { grid-template-columns: 1fr; gap: 2px; } .sheet dt { padding-top: 0; } }
+
+  /* ── features ───────────────────────────────────────── */
+  .feats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border-block: 1px solid var(--rule); }
+  @media (max-width: 1000px) { .feats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .feats { grid-template-columns: 1fr; } }
+  .feat { background: var(--coal); padding: 28px 24px 30px; display: flex; flex-direction: column; gap: 12px; transition: background 300ms ease; min-width: 0; }
+  .feat:hover { background: var(--coal-2); }
+  .feat .r { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--signal); }
+  .feat h3 { font-size: 27px; line-height: 1.05; }
+  .feat p { margin: 0; font-size: 14.5px; color: var(--cream-dim); }
+
+  /* ── asset grids ────────────────────────────────────── */
+  .note { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fog); margin: 0; }
+  .file { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .file .t { font-size: 14.5px; color: var(--cream); line-height: 1.35; }
+  .file .t b { font-family: var(--mono); font-weight: 500; font-size: 12px; color: var(--signal); margin-right: 6px; }
+  .file .s { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fog); }
+  .tile { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .tile .pic { border-radius: 14px; overflow: hidden; border: 1px solid var(--rule); background: var(--coal-2); transition: border-color 300ms ease, translate 500ms var(--ease); }
+  .tile:hover .pic { border-color: color-mix(in srgb, var(--signal) 55%, transparent); translate: 0 -4px; }
+  .tile:hover .file .t { color: var(--signal); }
+
+  .shots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px) clamp(12px, 1.6vw, 20px); }
+  @media (max-width: 1000px) { .shots { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .shots .pic { aspect-ratio: 1320 / 2868; }
+  .shots .pic img { width: 100%; height: 100%; object-fit: cover; }
+  .shots .all .pic {
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; padding: 18px;
+    border-style: dashed; border-color: var(--rule-2);
+    background: radial-gradient(ellipse 120% 70% at 100% 0%, rgba(34,211,238,0.10), transparent 60%), var(--coal-2);
+  }
+  .shots .all .big { font-family: var(--serif); font-size: clamp(26px, 2.4vw, 34px); line-height: 1.02; letter-spacing: -0.01em; }
+  .shots .all .arr { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); }
+
+  .frames { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 28px); }
+  @media (max-width: 640px) { .frames { grid-template-columns: 1fr; } }
+  .frames .pic { aspect-ratio: 2000 / 920; background: #000; }
+  .frames .pic img { width: 100%; height: 100%; object-fit: cover; }
+
+  .marks { display: grid; grid-template-columns: 0.8fr 0.8fr 1.4fr; gap: clamp(18px, 2.4vw, 28px); }
+  @media (max-width: 900px) { .marks { grid-template-columns: repeat(2, minmax(0, 1fr)); } .marks .wide { grid-column: 1 / -1; } }
+  @media (max-width: 520px) { .marks { grid-template-columns: 1fr; } }
+  .marks .pic { aspect-ratio: 4 / 3; display: grid; place-items: center; background: radial-gradient(circle at 50% 45%, var(--coal-3), var(--coal-2) 70%); }
+  .marks .wide .pic { aspect-ratio: 1200 / 630; background: var(--coal-2); }
+  .marks .wide .pic img { width: 100%; height: 100%; object-fit: contain; }
+  @media (min-width: 901px) { .marks .pic, .marks .wide .pic { aspect-ratio: auto; height: clamp(200px, 21vw, 270px); } }
+  .marks .icon-img { width: 42%; aspect-ratio: 1; border-radius: 22.5%; box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 24px 48px -18px rgba(34,211,238,0.35); }
+  .marks .mark-img { width: 34%; aspect-ratio: 1; }
+  .marks .file .d { font-size: 13.5px; color: var(--cream-dim); margin-top: 4px; }
+
+  /* ── kit + contact ──────────────────────────────────── */
+  .panel { border: 1px solid var(--rule); border-radius: 28px; padding: clamp(28px, 6vw, 72px); position: relative; overflow: hidden;
+    background: radial-gradient(ellipse 80% 120% at 100% 0%, rgba(34,211,238,0.12), transparent 60%), var(--coal-2);
+    display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 44px; align-items: start; }
+  @media (max-width: 860px) { .panel { grid-template-columns: 1fr; } }
+  @media (max-width: 420px) { .panel { border-radius: 20px; padding: 26px 20px; } }
+  .panel .left { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+  .kit-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--rule-2); }
+  .kit-list li { display: flex; justify-content: space-between; gap: 16px; padding-block: 10px; border-bottom: 1px solid var(--rule-2); font-size: 14.5px; color: var(--cream-dim); }
+  .kit-list li span:last-child { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fog); white-space: nowrap; padding-top: 3px; }
+  .contact { display: grid; gap: 26px; min-width: 0; }
+  .contact .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fog); margin-bottom: 8px; }
+  .addr { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .addr .v { font-family: var(--mono); font-size: clamp(15px, 1.6vw, 18px); color: var(--cream); user-select: all; overflow-wrap: anywhere; }
+  .copy-btn { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--rule-2); background: transparent; color: var(--cream-dim); cursor: pointer; }
+  .copy-btn:hover { border-color: var(--signal); color: var(--signal); }
+  .fine { margin: 0; font-size: 14px; color: var(--cream-dim); max-width: 46ch; }
+  .fine a { color: var(--cream); border-bottom: 1px solid var(--rule-2); }
+  .fine a:hover { color: var(--signal); border-color: var(--signal); }
+
+  /* ── footer ─────────────────────────────────────────── */
+  .help-links { display: flex; flex-wrap: wrap; gap: 10px 28px; padding-block: 28px 8px; border-top: 1px solid var(--rule); font-size: 15px; margin-top: clamp(72px, 10vw, 136px); }
+  .help-links a { color: var(--cream-dim); border-bottom: 1px solid var(--rule-2); padding-bottom: 2px; transition: color 200ms ease, border-color 200ms ease; }
+  .help-links a:hover, .help-links a[aria-current="page"] { color: var(--signal); border-color: var(--signal); }
+  footer { padding-block: 18px 72px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fog); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+    .draw { stroke-dashoffset: 0; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bmRing" x1="0.15" y1="0.12" x2="0.85" y2="0.9">
+      <stop offset="0" stop-color="#A5F3FC"/><stop offset="0.32" stop-color="#22D3EE"/><stop offset="0.7" stop-color="#0891B2"/><stop offset="1" stop-color="#155E75"/>
+    </linearGradient>
+    <linearGradient id="bmSlash" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#67E8F9"/><stop offset="0.5" stop-color="#22D3EE"/><stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/" aria-label="Coverage home">
+      <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="url(#bmRing)" stroke-width="9"/><line x1="82" y1="18" x2="18" y2="82" stroke="url(#bmSlash)" stroke-width="9" stroke-linecap="round"/></svg>
+      <span class="wordmark">Coverage</span>
+      <span class="sub">Press</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#viewfinder">Viewfinder</a>
+      <a href="#logo">Icon</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="coverage-field-kit-press-kit.zip" download>Press kit ZIP</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow rise" style="--d:0">Press kit</span>
+        <h1 class="rise" style="--d:1"><span class="line">Coverage</span> <span class="line grad">Field Kit</span></h1>
+        <p class="tagline rise" style="--d:2">Frame it before you shoot it.</p>
+        <p class="lede rise" style="--d:3">The camera department's field kit for iPhone. Put any cine lens on any sensor, see its coverage, falloff and framing, take it to set through a director's viewfinder on your phone, and find who rents it.</p>
+        <p class="readout rise" style="--d:4"><span class="on">Out on the App Store · 3 November 2026</span><span><b>iPhone</b></span><span>7-day trial, then one purchase</span></p>
+        <div class="hero-actions rise" style="--d:5">
+          <a class="btn btn-primary" href="coverage-field-kit-press-kit.zip" download>Download press kit <span class="meta">ZIP · 9.9 MB</span> <span class="arr" aria-hidden="true">↓</span></a>
+          <a class="btn btn-ghost" href="fact-sheet.txt">Fact sheet <span class="meta">TXT</span></a>
+        </div>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <svg viewBox="0 0 520 520" preserveAspectRatio="xMidYMid meet">
+          <circle class="draw" pathLength="1" cx="260" cy="260" r="236" stroke="rgba(34,211,238,0.28)" stroke-width="1"/>
+          <circle class="draw" pathLength="1" cx="260" cy="260" r="178" stroke="rgba(34,211,238,0.14)" stroke-width="1" style="animation-delay:500ms"/>
+          <rect class="draw" pathLength="1" x="58" y="125" width="404" height="270" stroke="rgba(242,237,226,0.16)" stroke-width="1" style="animation-delay:800ms"/>
+          <line class="draw" pathLength="1" x1="58" y1="395" x2="462" y2="125" stroke="rgba(242,237,226,0.10)" stroke-width="1" stroke-dasharray="4 6" style="animation-delay:1100ms"/>
+          <text x="58" y="113">ICON · 1024 PX</text>
+        </svg>
+        <img class="icon rise" style="--d:4" src="thumbs/icon.webp" alt="" width="320" height="320">
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <div class="wrap">
+    <div class="stats" aria-label="Catalog in numbers">
+      <div class="stat"><span class="n">2,075</span><span class="l">Lenses</span></div>
+      <div class="stat"><span class="n">71</span><span class="l">Camera bodies</span></div>
+      <div class="stat"><span class="n">749</span><span class="l">Sensor modes</span></div>
+      <div class="stat"><span class="n">474</span><span class="l">Rental houses · 73 countries</span></div>
+    </div>
+  </div>
+
+  <!-- ABOUT + FACT SHEET -->
+  <section class="block" id="about">
+    <div class="wrap about">
+      <div class="copy">
+        <span class="eyebrow">About</span>
+        <h2>The camera department's <span class="grad">field kit</span>.</h2>
+        <div class="boiler" id="boiler">
+          <p>Coverage Field Kit is an iPhone app for the camera department. Pick a camera, a sensor mode and a lens, and it draws the image circle that lens throws onto that sensor, to scale, with light falloff and a warning when the corners vignette. The catalog holds 2,075 cine lenses, 71 camera bodies and 749 sensor modes.</p>
+          <p>On set, the director's viewfinder zooms the phone's cameras to the cine lens's field of view and draws framelines and camera settings over the live image. Stills and clips are saved with the lens, framelines, focus, camera settings, tilt, compass heading and GPS. Every lens page lists the rental houses that carry it: 474 in 73 countries.</p>
+          <p>Coverage Field Kit is made by Daniel Ocanto Hernandez, an independent developer. It is out on the App Store on 3 November 2026.</p>
+        </div>
+        <div class="boiler-foot"><button class="copy-btn" type="button" data-copy="boiler" data-label="Copy text">Copy text</button><span>Free to quote in full or in part</span></div>
+      </div>
+      <div id="facts">
+        <dl class="sheet" aria-label="Fact sheet">
+          <div><dt>App</dt><dd>Coverage Field Kit</dd></div>
+          <div><dt>Tagline</dt><dd>Frame it before you shoot it.</dd></div>
+          <div><dt>Platform</dt><dd>iPhone</dd></div>
+          <div><dt>Release</dt><dd class="hl">3 November 2026 · App Store</dd></div>
+          <div><dt>Price</dt><dd>Free download with a 7-day trial, then a one-time purchase<small>No subscription · Family Sharing</small></dd></div>
+          <div><dt>Launch price</dt><dd>€19.99 / $19.99<small>Until 15 November 2026</small></dd></div>
+          <div><dt>Regular price</dt><dd>€24.99 / $24.99</dd></div>
+          <div><dt>Lens catalog</dt><dd>2,075 lenses<small>Primes, zooms, anamorphics, rehousings</small></dd></div>
+          <div><dt>Cameras</dt><dd>71 camera bodies · 749 sensor modes</dd></div>
+          <div><dt>Rental houses</dt><dd>474 in 73 countries</dd></div>
+          <div><dt>Developer</dt><dd>Daniel Ocanto Hernandez<small>Independent developer</small></dd></div>
+          <div><dt>Website</dt><dd>coverage-app.xyz</dd></div>
+          <div><dt>Press contact</dt><dd>support@coverage-app.xyz</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="block" id="features">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Features</span>
+        <h2>What it <span class="grad">does</span>.</h2>
+      </div>
+      <div class="feats">
+        <article class="feat"><span class="r">Coverage</span><h3>Any lens on any sensor</h3><p>The image circle drawn to scale over the exact sensor mode, with light falloff at the T-stop you set and a warning when the corners vignette.</p></article>
+        <article class="feat"><span class="r">Compare A | B</span><h3>Two setups side by side</h3><p>Two lenses on one camera, or one lens on two cameras, with the specs in two columns, row for row.</p></article>
+        <article class="feat"><span class="r">Viewfinder</span><h3>Frame through the cine lens</h3><p>The phone's cameras zoom to the cine lens's field of view, with framelines, a camera-settings HUD and looks (LUTs) over the live image.</p></article>
+        <article class="feat"><span class="r">Shot log</span><h3>Every frame keeps its setup</h3><p>Stills and clips save with the lens, framelines, focus, camera settings, tilt, compass heading and GPS. Export them as a shot-list PDF.</p></article>
+        <article class="feat"><span class="r">Projects</span><h3>One project per shoot</h3><p>Camera, sensor mode, lens list and crew credits together, shared as a single file.</p></article>
+        <article class="feat"><span class="r">Reports</span><h3>Print-ready paperwork</h3><p>A4 reports for a lens, a set or a project, and landscape A|B comparison sheets.</p></article>
+        <article class="feat"><span class="r">Rent this lens</span><h3>Who carries it</h3><p>474 rental houses in 73 countries, listed lens by lens, with their websites and contact details.</p></article>
+        <article class="feat"><span class="r">MTF / VFX</span><h3>Data for the VFX team</h3><p>MTF and lens data exported as a Nuke .nk file and CSV.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="block" id="screenshots">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Screenshots</span>
+        <h2>App Store <span class="grad">screenshots</span>.</h2>
+        <p class="lede">Nine PNGs at 1320 × 2868, the set used on the App Store. Each one opens the full-size file.</p>
+      </div>
+      <div class="shots">
+        <a class="tile" href="screenshots/01-viewfinder.png"><div class="pic"><img src="thumbs/01-viewfinder.webp" alt="App Store screenshot: Director's viewfinder, four landscape frames shot through a cine lens with framelines and camera settings" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>01</b>Director's viewfinder</span><span class="s">PNG · 1.5 MB</span></span></a>
+        <a class="tile" href="screenshots/02-coverage.png"><div class="pic"><img src="thumbs/02-coverage.webp" alt="App Store screenshot: Coverage projection of a lens on an ARRI Alexa 35 with a vignette warning" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>02</b>Coverage and falloff</span><span class="s">PNG · 739 KB</span></span></a>
+        <a class="tile" href="screenshots/03-shots.png"><div class="pic"><img src="thumbs/03-shots.webp" alt="App Store screenshot: Shot log detail, a saved frame with its lens, camera and settings" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>03</b>Shot log</span><span class="s">PNG · 941 KB</span></span></a>
+        <a class="tile" href="screenshots/04-rentals.png"><div class="pic"><img src="thumbs/04-rentals.webp" alt="App Store screenshot: Rent this lens, rental houses that carry a lens listed by country" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>04</b>Rent this lens</span><span class="s">PNG · 337 KB</span></span></a>
+        <a class="tile" href="screenshots/05-compare.png"><div class="pic"><img src="thumbs/05-compare.webp" alt="App Store screenshot: Compare A|B, two lens projections on the same sensor, one above the other" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>05</b>Compare A|B</span><span class="s">PNG · 864 KB</span></span></a>
+        <a class="tile" href="screenshots/06-lenses.png"><div class="pic"><img src="thumbs/06-lenses.webp" alt="App Store screenshot: Lens catalog, every focal in the ARRI Signature Prime set" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>06</b>Lens catalog</span><span class="s">PNG · 271 KB</span></span></a>
+        <a class="tile" href="screenshots/07-project.png"><div class="pic"><img src="thumbs/07-project.webp" alt="App Store screenshot: Project with crew credits and a lens list" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>07</b>Projects</span><span class="s">PNG · 311 KB</span></span></a>
+        <a class="tile" href="screenshots/08-report.png"><div class="pic"><img src="thumbs/08-report.webp" alt="App Store screenshot: Print-ready A4 lens report" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>08</b>Lens report</span><span class="s">PNG · 463 KB</span></span></a>
+        <a class="tile" href="screenshots/09-home.png"><div class="pic"><img src="thumbs/09-home.webp" alt="App Store screenshot: Home screen with the current setup and a shortcut to the director's viewfinder" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>09</b>Home</span><span class="s">PNG · 623 KB</span></span></a>
+        <a class="tile all" href="coverage-field-kit-press-kit.zip" download><div class="pic"><span class="note">All nine</span><span class="big">In the press kit ZIP</span><span class="arr">Download ↓</span></div><span class="file"><span class="t">Every asset on this page</span><span class="s">ZIP · 9.9 MB</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEWFINDER FRAMES -->
+  <section class="block" id="viewfinder">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Director's viewfinder</span>
+        <h2>Frames from the <span class="grad">viewfinder</span>.</h2>
+        <p class="lede">Phone captures through the viewfinder: an ARRI/ZEISS Standard T2.1 40mm on a RED Komodo 6K (6K 17:9) with a 2.39 frameline. PNG, 2000 × 920.</p>
+      </div>
+      <div class="frames">
+        <a class="tile" href="viewfinder/vf-boats.png"><div class="pic"><img src="../img/vf-boats.webp" alt="Viewfinder framing two rowing boats on rippled water at 2.39, with camera settings across the top and the lens and sensor below" width="2000" height="920" loading="lazy"></div><span class="file"><span class="t">Harbour</span><span class="s">PNG · 1.4 MB</span></span></a>
+        <a class="tile" href="viewfinder/vf-lamp.png"><div class="pic"><img src="../img/vf-lamp.webp" alt="Viewfinder framing a lamp and window light in a dark room at 2.39, with camera settings across the top and the lens and sensor below" width="2000" height="920" loading="lazy"></div><span class="file"><span class="t">Interior</span><span class="s">PNG · 446 KB</span></span></a>
+        <a class="tile" href="viewfinder/vf-signs.png"><div class="pic"><img src="../img/vf-signs.webp" alt="Viewfinder framing road signs on a traffic island in open country at 2.39, with camera settings across the top and the lens and sensor below" width="2000" height="920" loading="lazy"></div><span class="file"><span class="t">Roadside</span><span class="s">PNG · 513 KB</span></span></a>
+        <a class="tile" href="viewfinder/vf-cliff.png"><div class="pic"><img src="../img/vf-cliff.webp" alt="Viewfinder framing a lone walker on a black-and-white sea cliff at 2.39, with camera settings across the top and the lens and sensor below" width="2000" height="920" loading="lazy"></div><span class="file"><span class="t">Coast</span><span class="s">PNG · 997 KB</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICON + LOGO -->
+  <section class="block" id="logo">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Icon and logo</span>
+        <h2>Icon, mark and <span class="grad">social card</span>.</h2>
+        <p class="lede">Please use them as supplied: no recolouring, cropping or added effects.</p>
+      </div>
+      <div class="marks">
+        <a class="tile" href="icon-1024.png" download><div class="pic"><img class="icon-img" src="thumbs/icon.webp" alt="Coverage Field Kit app icon: a cyan aperture ring crossed by a diagonal slash on near-black" width="320" height="320" loading="lazy"></div><span class="file"><span class="t">App icon</span><span class="s">PNG · 1024 × 1024 · 171 KB</span><span class="d">Square, unmasked. iOS rounds the corners.</span></span></a>
+        <a class="tile" href="logo-mark.svg" download><div class="pic"><img class="mark-img" src="logo-mark.svg" alt="Coverage logo mark: a cyan ring and slash on a dark rounded square" width="100" height="100" loading="lazy"></div><span class="file"><span class="t">Logo mark</span><span class="s">SVG · vector</span><span class="d">Ring and slash on coal. Scales to any size.</span></span></a>
+        <a class="tile wide" href="social-card-1200x630.png" download><div class="pic"><img src="social-card-1200x630.png" alt="Social card: Coverage Field Kit, Frame it before you shoot it, over a viewfinder frame of two boats" width="1200" height="630" loading="lazy"></div><span class="file"><span class="t">Social card</span><span class="s">PNG · 1200 × 630 · 459 KB</span><span class="d">The image shown when the site is shared.</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KIT + CONTACT -->
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="panel">
+        <div class="left">
+          <span class="eyebrow">Press kit</span>
+          <h2>Everything in <span class="grad">one file</span>.</h2>
+          <ul class="kit-list">
+            <li><span>Fact sheet</span><span>TXT</span></li>
+            <li><span>App Store screenshots</span><span>9 × PNG</span></li>
+            <li><span>Viewfinder frames</span><span>4 × PNG</span></li>
+            <li><span>App icon, 1024 px</span><span>PNG</span></li>
+            <li><span>Logo mark</span><span>SVG</span></li>
+            <li><span>Social card, 1200 × 630</span><span>PNG</span></li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="coverage-field-kit-press-kit.zip" download>Download press kit <span class="meta">ZIP · 9.9 MB</span> <span class="arr" aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="contact">
+          <div>
+            <div class="lbl">Press contact</div>
+            <div class="addr"><span class="v" id="mail1">support@coverage-app.xyz</span><button class="copy-btn" type="button" data-copy="mail1" data-label="Copy">Copy</button></div>
+          </div>
+          <p class="fine">Daniel Ocanto Hernandez, developer. Interviews, review questions and asset requests. Answers within two working days.</p>
+          <div>
+            <div class="lbl">Release</div>
+            <p class="fine">Out on the App Store for iPhone on 3 November 2026. Free download with a 7-day trial, then a one-time purchase.</p>
+          </div>
+          <div>
+            <div class="lbl">More</div>
+            <p class="fine"><a href="/">Home page</a> · <a href="/support/">Support</a> · <a href="fact-sheet.txt">Fact sheet</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap">
+  <nav class="help-links" aria-label="Help and legal">
+    <a href="/support/">Support</a><a href="/press/" aria-current="page">Press</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a><a href="/legal/">Legal notice</a>
+  </nav>
+  <footer>
+    <span>© 2026 Coverage Field Kit</span>
+    <span>support@coverage-app.xyz</span>
+  </footer>
+</div>
+
+<script>
+  (() => {
+    // Nav hairline once the page scrolls.
+    const nav = document.getElementById("nav");
+    const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+    // Copy buttons: the press address and the boilerplate.
+    document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => {
+      const el = document.getElementById(b.dataset.copy);
+      const text = [...el.querySelectorAll("p")].map((p) => p.textContent.trim()).join("\n\n") || el.textContent.trim();
+      try { await navigator.clipboard.writeText(text); b.textContent = "Copied"; }
+      catch { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected"; }
+      setTimeout(() => (b.textContent = b.dataset.label || "Copy"), 1600);
+    }));
+  })();
+</script>
+</body>
+</html>

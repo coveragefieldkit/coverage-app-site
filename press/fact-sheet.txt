@@ -1,0 +1,88 @@
+COVERAGE FIELD KIT
+Press fact sheet
+
+Frame it before you shoot it.
+
+The camera department's field kit: put any cine lens on any sensor, see
+its coverage, falloff and framing, take it to set through a director's
+viewfinder on your phone, and find who rents it.
+
+
+FACTS
+-----
+App              Coverage Field Kit
+Platform         iPhone
+Release          3 November 2026, App Store
+Price            Free download with a 7-day trial, then a one-time purchase
+Launch price     €19.99 / $19.99 until 15 November 2026
+Regular price    €24.99 / $24.99
+Subscription     None
+Family Sharing   Yes
+Lens catalog     2,075 lenses: primes, zooms, anamorphics, rehousings
+Cameras          71 camera bodies, 749 sensor modes
+Rental houses    474 rental houses in 73 countries
+Developer        Daniel Ocanto Hernandez, independent developer
+Website          https://coverage-app.xyz
+Press contact    support@coverage-app.xyz
+
+
+ABOUT
+-----
+Coverage Field Kit is an iPhone app for the camera department. Pick a
+camera, a sensor mode and a lens, and it draws the image circle that lens
+throws onto that sensor, to scale, with light falloff and a warning when
+the corners vignette. The catalog holds 2,075 cine lenses, 71 camera
+bodies and 749 sensor modes.
+
+On set, the director's viewfinder zooms the phone's cameras to the cine
+lens's field of view and draws framelines and camera settings over the
+live image. Stills and clips are saved with the lens, framelines, focus,
+camera settings, tilt, compass heading and GPS. Every lens page lists the
+rental houses that carry it: 474 in 73 countries.
+
+Coverage Field Kit is made by Daniel Ocanto Hernandez, an independent
+developer. It is out on the App Store on 3 November 2026.
+
+
+FEATURES
+--------
+- Coverage: any cine lens on any sensor mode, image circle drawn to scale,
+  light falloff at the T-stop you set, vignette warnings.
+- Compare A|B: two lenses or two cameras side by side, specs row for row.
+- Director's viewfinder: the phone's cameras zoom to the cine lens's field
+  of view, with framelines, a camera-settings HUD and looks (LUTs).
+- Stills and clips saved with lens, framelines, focus, camera settings,
+  tilt, compass heading and GPS.
+- Shot log and shot-list PDF.
+- Projects with crew credits and lens lists.
+- Print-ready A4 lens reports and landscape A|B comparison sheets.
+- Rent this lens: 474 rental houses in 73 countries, lens by lens.
+- MTF/VFX export: Nuke .nk and CSV.
+
+
+IN THIS KIT
+-----------
+fact-sheet.txt                 This file
+icon-1024.png                  App icon, 1024 x 1024 PNG, square and unmasked
+logo-mark.svg                  Logo mark, SVG
+social-card-1200x630.png       Social card, 1200 x 630 PNG
+screenshots/                   Nine App Store screenshots, 1320 x 2868 PNG
+  01-viewfinder.png            Director's viewfinder
+  02-coverage.png              Coverage and falloff
+  03-shots.png                 Shot log
+  04-rentals.png               Rent this lens
+  05-compare.png               Compare A|B
+  06-lenses.png                Lens catalog
+  07-project.png               Projects
+  08-report.png                Lens report
+  09-home.png                  Home
+viewfinder/                    Four viewfinder frames, 2000 x 920 PNG
+  vf-boats.png                 Harbour
+  vf-lamp.png                  Interior
+  vf-signs.png                 Roadside
+  vf-cliff.png                 Coast
+
+The viewfinder frames are phone captures: an ARRI/ZEISS Standard T2.1
+40mm on a RED Komodo 6K (6K 17:9) with a 2.39 frameline.
+
+Online: https://coverage-app.xyz/press/
