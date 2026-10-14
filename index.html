@@ -324,11 +324,23 @@
   .role h4 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.05; margin: 0; }
   .role p { margin: 0; font-size: 14.5px; color: var(--cream-dim); }
 
-  /* ── beta + footer ──────────────────────────────────── */
+  /* ── launch + footer ────────────────────────────────── */
   .beta { border: 1px solid var(--rule); border-radius: 28px; padding: clamp(32px, 6vw, 72px); position: relative; overflow: hidden;
     background: radial-gradient(ellipse 80% 120% at 100% 0%, rgba(34,211,238,0.12), transparent 60%), var(--coal-2); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: end; }
   @media (max-width: 860px) { .beta { grid-template-columns: 1fr; } }
-  .contact { display: grid; gap: 16px; }
+  .contact { display: grid; gap: 28px; }
+  .notify { display: grid; gap: 12px; }
+  .notify-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .notify input[type=email] { flex: 1 1 220px; min-width: 0; font: 500 15px var(--sans); color: var(--cream); background: var(--coal); border: 1px solid var(--rule-2); border-radius: 999px; padding: 13px 20px; outline: none; transition: border-color 250ms ease; }
+  .notify input[type=email]::placeholder { color: var(--fog); }
+  .notify input[type=email]:focus-visible { border-color: var(--signal); }
+  .notify .btn { border: 0; cursor: pointer; font-family: var(--sans); }
+  .notify .btn[disabled] { opacity: 0.6; cursor: default; }
+  .notify .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .notify-msg { margin: 0; min-height: 1.4em; font-size: 14px; color: var(--signal); }
+  .notify-msg.err { color: var(--amber); }
+  .fine { margin: 0; font-size: 12.5px; color: var(--fog); max-width: 46ch; }
+  .fine a { color: var(--cream-dim); border-bottom: 1px solid var(--rule-2); }
   .contact .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fog); }
   .addr { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .addr .v { font-family: var(--mono); font-size: 15px; color: var(--cream); user-select: all; }
@@ -374,7 +386,7 @@
       <a href="#viewfinder">Viewfinder</a>
       <a href="/support/">Support</a>
     </nav>
-    <a class="btn btn-primary btn-sm" href="#beta">Join the beta</a>
+    <a class="btn btn-primary btn-sm" href="#launch">Get notified</a>
   </div>
 </header>
 
@@ -383,7 +395,7 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow rise" style="--d:0">iOS · TestFlight beta</span>
+        <span class="eyebrow rise" style="--d:0">iPhone · App Store, 3 November</span>
         <h1 class="rise" style="--d:1">
           <span class="line">Frame it</span>
           <span class="line grad">before</span>
@@ -391,7 +403,7 @@
         </h1>
         <p class="lede rise" style="--d:2">The camera department's field kit. Put any lens on any sensor, see its coverage, falloff and framing, then take it to set through a director's viewfinder on your phone.</p>
         <div class="hero-actions rise" style="--d:3">
-          <a class="btn btn-primary" href="#beta">Join the beta <span class="arr">→</span></a>
+          <a class="btn btn-primary" href="#launch">Email me at launch <span class="arr">→</span></a>
           <a class="btn btn-ghost" href="#coverage">See how it works</a>
         </div>
         <div class="readout rise" style="--d:4" aria-label="Example readout">
@@ -633,17 +645,27 @@
     </div>
   </section>
 
-  <!-- BETA -->
-  <section class="block" id="beta" style="padding-top:0">
+  <!-- LAUNCH -->
+  <section class="block" id="launch" style="padding-top:0">
     <div class="wrap">
       <div class="beta reveal">
         <div style="display:flex;flex-direction:column;gap:20px">
-          <span class="eyebrow">TestFlight beta</span>
-          <h2>Get it on your <span class="grad">phone.</span></h2>
-          <p class="lede">Coverage is in beta on iPhone and iPad. Write to us with the device you shoot on and we'll send an invite.</p>
+          <span class="eyebrow">App Store · 3 November</span>
+          <h2>Out on the <span class="grad">App Store</span> 3 November.</h2>
+          <p class="lede">For iPhone. Free to download with a 7-day trial, then one purchase keeps everything: €19.99 / $19.99 until 15 November, €24.99 / $24.99 after. No subscription.</p>
         </div>
         <div class="contact">
-          <div><div class="lbl">Beta, support and press</div><div class="addr"><span class="v" id="mail1">support@coverage-app.xyz</span><button class="copy-btn" type="button" data-copy="mail1">Copy</button></div></div>
+          <form class="notify" id="notify" novalidate>
+            <label class="lbl" for="notifyEmail">Email me on launch day</label>
+            <div class="notify-row">
+              <input id="notifyEmail" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@studio.com" maxlength="254" required>
+              <input class="hp" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <button class="btn btn-primary" type="submit">Notify me</button>
+            </div>
+            <p class="notify-msg" id="notifyMsg" role="status" aria-live="polite"></p>
+            <p class="fine">One email when the app is out, then we delete your address. No newsletter, no sharing. <a href="/privacy/#launch-list">How we handle it</a></p>
+          </form>
+          <div><div class="lbl">Support and press</div><div class="addr"><span class="v" id="mail1">support@coverage-app.xyz</span><button class="copy-btn" type="button" data-copy="mail1">Copy</button></div></div>
         </div>
       </div>
     </div>
@@ -702,6 +724,45 @@
           if (e.isIntersecting && !picked) timer = setInterval(() => show((cur + 1) % vfImgs.length), 4500);
         }, { threshold: 0.4 }).observe(document.getElementById("vfStack"));
       }
+    }
+
+    // Launch list: one Firestore doc per address (id = SHA-256 of the
+    // lowercased address). The rules only allow creating it, so a repeat
+    // comes back ALREADY_EXISTS and nothing can be read back.
+    const form = document.getElementById("notify");
+    if (form) {
+      const msg = document.getElementById("notifyMsg");
+      const btn = form.querySelector("button[type=submit]");
+      const say = (text, err) => { msg.textContent = text; msg.classList.toggle("err", !!err); };
+      const DOCS = "https://firestore.googleapis.com/v1/projects/coverage-app-de512/databases/(default)/documents";
+      form.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const email = form.email.value.trim().toLowerCase();
+        if (form.company.value) { say("You're on the list. We'll write on 3 November."); return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || email.length > 254) { say("That address doesn't look right.", true); form.email.focus(); return; }
+        btn.disabled = true; say("");
+        try {
+          const hash = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(email));
+          const id = [...new Uint8Array(hash)].map((b) => b.toString(16).padStart(2, "0")).join("");
+          const res = await fetch(`${DOCS}:commit`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ writes: [{
+              update: {
+                name: `projects/coverage-app-de512/databases/(default)/documents/launchList/${id}`,
+                fields: { email: { stringValue: email }, locale: { stringValue: (navigator.language || "").slice(0, 16) } },
+              },
+              currentDocument: { exists: false },
+              updateTransforms: [{ fieldPath: "createdAt", setToServerValue: "REQUEST_TIME" }],
+            }] }),
+          });
+          if (res.ok) { say("You're on the list. We'll write on 3 November."); form.reset(); }
+          else if (res.status === 409) { say("You're already on the list."); form.reset(); }
+          else throw new Error(String(res.status));
+        } catch {
+          say("That didn't go through. Write to support@coverage-app.xyz and we'll add you.", true);
+        } finally { btn.disabled = false; }
+      });
     }
 
     // Hero parallax: phones lean toward the pointer (desktop only).
