@@ -18,27 +18,31 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@1,8..60,700&display=swap">
 <style>
-  /* Same projection-booth ground as the home page: coal, cream type, cyan
-     signal. One 1240px column; every asset links to the file it shows. */
+  /* v2, same system as the home page: Helvetica Neue bold and tight, one
+     Source Serif 4 bold-italic word per heading, coal ground. The maths sits
+     on paper cards: formulas and figures are the page's reference sheets. */
   :root {
     --coal: #0b0d10;
-    --coal-2: #101318;
-    --coal-3: #151a20;
-    --rule: #1e2328;
-    --rule-2: #2b3138;
-    --cream: #f2ede2;
-    --cream-dim: #b8b3a6;
-    --fog: #7a766d;
-    --aperture: #a5f3fc;
+    --coal-2: #111418;
+    --coal-3: #171a1f;
+    --rule: #23272c;
+    --rule-2: #363b42;
+    --cream: #eeede8;
+    --cream-dim: #a8a7a1;
+    --fog: #8a8983;
+    --paper: #e9e8e3;
+    --ink: #0e0f10;
+    --ink-2: #46453f;
+    --ink-3: #5f5e58;
+    --paper-rule: #c9c7bf;
     --signal: #22d3ee;
-    --optic: #0891b2;
-    --deep: #155e75;
+    --signal-hi: #67e8f9;
+    --tight: #a5f3fc;
     --amber: #f59e0b;
-    --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
-    --sans: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "SF Pro Text", Arial, sans-serif;
+    --accent: "Source Serif 4", Georgia, "Times New Roman", serif;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
     --gutter: clamp(16px, 4vw, 48px);
     color-scheme: dark;
@@ -51,47 +55,43 @@
     color: var(--cream);
     font-family: var(--sans);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
   }
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; height: auto; display: block; }
-  ::selection { background: var(--optic); color: var(--cream); }
+  ::selection { background: var(--signal); color: var(--coal); }
   :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
   .wrap { max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); }
   [id] { scroll-margin-top: 84px; }
 
   /* ── type ───────────────────────────────────────────── */
-  .eyebrow {
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--signal);
-    display: inline-flex; align-items: center; gap: 12px;
+  .micro, .eyebrow {
+    font-family: var(--sans); font-weight: 500; font-size: 11px; line-height: 1.35;
+    letter-spacing: 0.06em; text-transform: uppercase; font-variant-numeric: tabular-nums;
   }
-  .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
-  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
-  h2 { font-size: clamp(40px, 5.6vw, 76px); line-height: 0.98; }
-  .grad {
-    font-style: italic;
-    background: linear-gradient(120deg, var(--aperture), var(--signal) 45%, var(--optic));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .lede { font-size: clamp(17px, 1.5vw, 20px); color: var(--cream-dim); max-width: 50ch; margin: 0; }
-  .mono { font-family: var(--mono); }
+  .eyebrow { color: var(--cream); display: flex; align-items: baseline; gap: 0.5em; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+  .eyebrow[data-n]::before { content: "N°" attr(data-n) " —"; color: var(--fog); }
+  h1, h2, h3, h4 { font-family: var(--sans); font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -0.04em; }
+  h2 { font-size: clamp(40px, 5.6vw, 80px); line-height: 0.95; letter-spacing: -0.046em; }
+  .ac { font-family: var(--accent); font-style: italic; font-weight: 700; letter-spacing: -0.02em; padding-right: 0.04em; }
+  .lede { font-size: clamp(18px, 1.55vw, 21px); font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; color: var(--cream-dim); max-width: 50ch; margin: 0; }
 
   /* ── nav ────────────────────────────────────────────── */
   .nav {
     position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
-    background: color-mix(in srgb, var(--coal) 72%, transparent);
-    -webkit-backdrop-filter: blur(20px) saturate(1.3); backdrop-filter: blur(20px) saturate(1.3);
+    background: color-mix(in srgb, var(--coal) 86%, transparent);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
     border-bottom: 1px solid transparent; transition: border-color 300ms ease;
   }
   .nav.scrolled { border-bottom-color: var(--rule); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 16px; }
-  .brand { display: flex; align-items: center; gap: 10px; }
-  .wordmark { font-weight: 900; letter-spacing: -0.06em; text-transform: uppercase; font-size: 18px; line-height: 1; }
-  .brand .sub { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fog); padding-left: 10px; border-left: 1px solid var(--rule-2); }
-  .nav-links { display: flex; gap: 28px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dim); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 14px; }
+  .brand { display: flex; align-items: center; gap: 9px; color: var(--cream); }
+  .brand svg { color: var(--signal); flex-shrink: 0; }
+  .wordmark { font-weight: 700; letter-spacing: -0.025em; text-transform: uppercase; font-size: 19px; line-height: 1; }
+  .brand .sub { color: var(--fog); padding-left: 10px; margin-left: 2px; border-left: 1px solid var(--rule-2); }
+  .nav-links { display: flex; gap: 26px; font-weight: 500; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--cream-dim); }
   .nav-links a { transition: color 200ms ease; }
   .nav-links a:hover { color: var(--cream); }
   @media (max-width: 960px) { .nav-links { display: none; } }
@@ -99,96 +99,85 @@
   .nav .btn-sm { white-space: nowrap; }
   .btn {
     display: inline-flex; align-items: center; gap: 10px;
-    padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 14px;
-    transition: transform 300ms var(--ease), background 250ms ease, border-color 250ms ease, color 250ms ease;
+    padding: 15px 24px; border-radius: 999px; font-weight: 500; font-size: 15px; line-height: 1;
+    transition: background 250ms ease, border-color 250ms ease, color 250ms ease;
     border: 1px solid transparent; cursor: pointer;
   }
-  .btn-primary { background: var(--signal); color: var(--coal); }
-  .btn-primary:hover { background: var(--aperture); transform: translateY(-2px); }
-  .btn-ghost { border-color: var(--rule-2); color: var(--cream); }
-  .btn-ghost:hover { border-color: var(--signal); color: var(--signal); transform: translateY(-2px); }
-  .btn-sm { padding: 9px 18px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
-  .btn .arr { transition: transform 300ms var(--ease); }
-  .btn:hover .arr { transform: translateY(3px); }
-  .btn .meta { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.72; }
-
+  .btn-primary { background: var(--signal); color: #04161b; }
+  .btn-primary:hover { background: var(--signal-hi); }
+  .btn-sm { padding: 10px 16px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
 
   /* ── page ───────────────────────────────────────────── */
-  .hero { padding-block: clamp(48px, 8vw, 104px) clamp(32px, 5vw, 56px); display: grid; gap: 26px; position: relative; }
-  .hero::before { content: ""; position: absolute; inset: -30% 0 auto auto; width: min(60vw, 800px); height: min(60vw, 800px); background: radial-gradient(circle, rgba(34,211,238,0.11), transparent 62%); pointer-events: none; }
-  h1 { font-size: clamp(56px, 8.4vw, 116px); line-height: 0.92; letter-spacing: -0.035em; }
-  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-  .toc a { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 12px; border: 1px solid var(--rule-2); border-radius: 999px; color: var(--cream-dim); }
+  .hero { padding-block: clamp(28px, 4vw, 48px) clamp(40px, 6vw, 72px); display: grid; gap: 28px; }
+  h1 { font-size: clamp(52px, 9.6vw, 148px); line-height: 0.92; letter-spacing: -0.055em; margin-top: clamp(8px, 2vw, 28px); }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .toc a { font-weight: 500; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border: 1px solid var(--rule-2); border-radius: 999px; color: var(--cream-dim); transition: border-color 200ms ease, color 200ms ease; }
   .toc a:hover { border-color: var(--signal); color: var(--signal); }
-  .nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--rule); }
-  .nums div { padding: 20px 18px 20px 0; display: grid; gap: 4px; min-width: 0; }
-  .nums div + div { padding-left: 18px; border-left: 1px solid var(--rule); }
-  .nums b { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 4.4vw, 60px); line-height: 1; }
-  .nums span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fog); }
-  @media (max-width: 700px) { .nums { grid-template-columns: repeat(2, minmax(0, 1fr)); } .nums div:nth-child(3) { border-left: 0; padding-left: 0; } .nums div:nth-child(n+3) { border-top: 1px solid var(--rule); } }
-  .sec { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(28px, 5vw, 72px); padding-block: clamp(48px, 7vw, 88px); border-top: 1px solid var(--rule); align-items: start; }
-  .sec:first-of-type { border-top: 0; }
+  .nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--cream); margin-top: clamp(16px, 3vw, 40px); }
+  .nums div { padding: 14px 18px 0 0; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; min-width: 0; }
+  .nums b { font-weight: 700; font-size: clamp(44px, 6vw, 92px); line-height: 0.86; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; order: 2; }
+  .nums span { font-weight: 500; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fog); order: 1; }
+  @media (max-width: 700px) { .nums { grid-template-columns: repeat(2, minmax(0, 1fr)); } .nums div:nth-child(n+3) { margin-top: 28px; border-top: 1px solid var(--rule); } }
+  .sec { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(28px, 5vw, 72px); padding-block: clamp(56px, 8vw, 104px); align-items: start; }
   @media (max-width: 900px) { .sec { grid-template-columns: 1fr; } }
-  .sec .copy { display: grid; gap: 18px; min-width: 0; }
-  .sec h2 { font-size: clamp(34px, 4.2vw, 56px); }
-  .sec p { margin: 0; color: var(--cream-dim); max-width: 60ch; }
-  .sec p b { color: var(--cream); font-weight: 600; }
-  .side { display: grid; gap: 16px; min-width: 0; }
-  .formula { background: var(--coal-2); border: 1px solid var(--rule); border-radius: 16px; padding: clamp(18px, 2.4vw, 28px); display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; min-width: 0; }
-  .formula .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fog); }
-  .eq { font-family: var(--mono); font-size: clamp(14px, 1.7vw, 19px); color: var(--cream); overflow-wrap: anywhere; }
-  .eq i { font-style: normal; color: var(--signal); }
-  .eq small { color: var(--fog); font-size: 0.8em; }
-  .where { font-size: 14px; color: var(--fog); margin: 0; }
-  .ex { border-left: 2px solid var(--signal); padding: 4px 0 4px 16px; font-size: 15px; color: var(--cream-dim); }
-  .ex .t { display: block; margin-bottom: 4px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--signal); }
+  .sec .copy { display: grid; gap: 20px; min-width: 0; }
+  .sec h2 { font-size: clamp(36px, 4.4vw, 62px); }
+  .sec p { margin: 0; color: var(--cream-dim); max-width: 60ch; font-size: 16.5px; }
+  .sec p b { color: var(--cream); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .side { display: grid; gap: 16px; min-width: 0; padding-top: 25px; }
+  @media (max-width: 900px) { .side { padding-top: 0; } }
+  /* Paper reference cards: formulas and figures. */
+  .formula, .fig { background: var(--paper); color: var(--ink); border-radius: 6px; }
+  .formula ::selection, .fig ::selection { background: var(--ink); color: var(--paper); }
+  .formula { padding: clamp(18px, 2.4vw, 28px); display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; min-width: 0; }
+  .formula .lbl { font-weight: 500; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); padding-bottom: 10px; border-bottom: 1px solid var(--paper-rule); }
+  .formula .lbl + .eq { margin-top: 4px; }
+  .eq { font-weight: 500; font-size: clamp(18px, 2vw, 25px); line-height: 1.3; letter-spacing: -0.015em; color: var(--ink); overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+  .eq i { font-style: italic; }
+  .eq small { font-size: 0.6em; letter-spacing: 0; vertical-align: -0.32em; line-height: 0; }
+  .eq small.note { color: var(--ink-3); font-size: 0.62em; vertical-align: baseline; }
+  .formula .where { font-size: 14px; color: var(--ink-3); margin: 0; }
+  .ex { border-left: 2px solid var(--cream-dim); padding: 4px 0 4px 16px; font-size: 15.5px; color: var(--cream-dim); }
+  .ex .t { display: block; margin-bottom: 4px; font-weight: 500; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fog); }
+  .ex.ok { border-color: var(--signal); }
+  .ex.ok .t { color: var(--signal); }
   .ex.warn { border-color: var(--amber); }
   .ex.warn .t { color: var(--amber); }
-  .ex b { color: var(--cream); font-weight: 600; font-variant-numeric: tabular-nums; }
-  .fig { background: var(--coal-2); border: 1px solid var(--rule); border-radius: 16px; padding: 14px; }
+  .ex b { color: var(--cream); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .fig { margin: 0; padding: 14px 14px 12px; }
   .fig svg { width: 100%; height: auto; display: block; }
-  .fig figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fog); margin-top: 10px; }
+  .fig figcaption { font-weight: 500; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--paper-rule); font-variant-numeric: tabular-nums; }
   .figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   @media (max-width: 520px) { .figs { grid-template-columns: 1fr; } }
   .rules { display: grid; gap: 0; border-top: 1px solid var(--rule-2); }
-  .rules div { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 14px; padding-block: 11px; border-bottom: 1px solid var(--rule-2); font-size: 14.5px; color: var(--cream-dim); }
-  .rules .v { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
-  .v.ok { color: var(--signal); } .v.tight { color: var(--aperture); } .v.bad { color: var(--amber); }
-  .end { padding-block: clamp(56px, 8vw, 96px) 0; display: grid; gap: 18px; }
+  .rules div { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 14px; padding-block: 11px; border-bottom: 1px solid var(--rule-2); font-size: 15px; color: var(--cream-dim); font-variant-numeric: tabular-nums; }
+  .rules .v { font-weight: 500; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cream); padding-top: 3px; }
+  .v.ok { color: var(--signal); } .v.tight { color: var(--tight); } .v.bad { color: var(--amber); }
+  .end { padding-block: clamp(64px, 9vw, 112px) 0; display: grid; gap: 22px; }
   .end p { margin: 0; color: var(--cream-dim); max-width: 60ch; }
-  .end .addr { font-family: var(--mono); color: var(--cream); font-size: 17px; user-select: all; }
+  .end .addr { font-weight: 500; color: var(--cream); font-size: clamp(20px, 2.4vw, 30px); letter-spacing: -0.02em; user-select: all; }
 
   /* ── footer ─────────────────────────────────────────── */
-  .help-links { display: flex; flex-wrap: wrap; gap: 10px 28px; padding-block: 28px 8px; border-top: 1px solid var(--rule); font-size: 15px; margin-top: clamp(72px, 10vw, 136px); }
+  .help-links { display: flex; flex-wrap: wrap; gap: 10px 28px; padding-block: 24px 8px; border-top: 1px solid var(--rule); font-size: 15px; font-weight: 500; margin-top: clamp(72px, 10vw, 136px); }
   .help-links a { color: var(--cream-dim); border-bottom: 1px solid var(--rule-2); padding-bottom: 2px; transition: color 200ms ease, border-color 200ms ease; }
   .help-links a:hover, .help-links a[aria-current="page"] { color: var(--signal); border-color: var(--signal); }
-  footer { padding-block: 18px 72px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fog); }
+  footer { padding-block: 18px 0; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; color: var(--fog); }
+  .bigmark { overflow: hidden; height: 0.75em; margin-top: clamp(40px, 6vw, 80px); font-size: calc((min(100vw, 1240px) - 2 * var(--gutter)) / 5.02); }
+  .bigmark span { display: block; font-weight: 700; text-transform: uppercase; letter-spacing: -0.06em; line-height: 0.8; color: var(--cream); white-space: nowrap; margin-left: -0.04em; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     html { scroll-behavior: auto; }
-    .draw { stroke-dashoffset: 0; }
   }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="bmRing" x1="0.15" y1="0.12" x2="0.85" y2="0.9">
-      <stop offset="0" stop-color="#A5F3FC"/><stop offset="0.32" stop-color="#22D3EE"/><stop offset="0.7" stop-color="#0891B2"/><stop offset="1" stop-color="#155E75"/>
-    </linearGradient>
-    <linearGradient id="bmSlash" x1="1" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#67E8F9"/><stop offset="0.5" stop-color="#22D3EE"/><stop offset="1" stop-color="#0EA5E9"/>
-    </linearGradient>
-  </defs>
-</svg>
-
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="/" aria-label="Coverage home">
-      <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="url(#bmRing)" stroke-width="9"/><line x1="82" y1="18" x2="18" y2="82" stroke="url(#bmSlash)" stroke-width="9" stroke-linecap="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="10"/><line x1="82" y1="18" x2="18" y2="82" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></svg>
       <span class="wordmark">Coverage</span>
-      <span class="sub">How it works</span>
+      <span class="sub micro">How it works</span>
     </a>
     <nav class="nav-links" aria-label="Sections">
       <a href="#sensors">Sensors</a>
@@ -204,7 +193,7 @@
 <main class="wrap">
   <section class="hero" aria-labelledby="title">
     <span class="eyebrow">How it works</span>
-    <h1 id="title">How Coverage <span class="grad">knows.</span></h1>
+    <h1 id="title">How Coverage <span class="ac">knows.</span></h1>
     <p class="lede">Every verdict in the app comes from numbers you can check. This is where they come from, and the maths that turns them into a frame, a falloff and a field of view.</p>
     <nav class="toc" aria-label="On this page">
       <a href="#sensors">Sensors</a><a href="#fov">Field of view</a><a href="#circle">Image circle</a><a href="#coverage">Measured coverage</a><a href="#verdict">The verdict</a><a href="#falloff">Falloff</a><a href="#viewfinder">Viewfinder</a><a href="#dof">Depth of field</a><a href="#sharpness">Sharpness</a><a href="#rentals">Rentals</a><a href="#checks">Checks</a>
@@ -219,8 +208,8 @@
 
   <section class="sec" id="sensors">
     <div class="copy">
-      <span class="eyebrow">01 · Sensors</span>
-      <h2>The <span class="grad">active area</span> of every recording mode.</h2>
+      <span class="eyebrow" data-n="01">Sensors</span>
+      <h2>The <span class="ac">active area</span> of every recording mode.</h2>
       <p>A camera doesn't have one sensor size. It has one per recording mode, and the mode decides what a lens has to cover. Coverage stores <b>749 modes across 71 cameras</b> (66 digital, 5 film): the active width and height in millimetres, the diagonal, the resolution and the format class. Film gates follow the published SMPTE and ANSI aperture standards.</p>
       <p>Each camera links to its maker's page, so you can check the figure yourself.</p>
     </div>
@@ -232,8 +221,8 @@
 
   <section class="sec" id="fov">
     <div class="copy">
-      <span class="eyebrow">02 · Field of view</span>
-      <h2>What the lens <span class="grad">sees</span> on that sensor.</h2>
+      <span class="eyebrow" data-n="02">Field of view</span>
+      <h2>What the lens <span class="ac">sees</span> on that sensor.</h2>
       <p>Field of view comes from the focal length and the active area of the exact mode. The model is a rectilinear lens focused at infinity: it doesn't include focus breathing or distortion.</p>
       <p>For anamorphic lenses, the viewfinder uses the desqueezed field: the sensor width multiplied by the squeeze, so a 2× lens on a 3:2 mode frames like the scope picture you'll deliver. Zooms use the focal you pick, stepped along the usual cine marks and both ends of the range.</p>
     </div>
@@ -245,8 +234,8 @@
 
   <section class="sec" id="circle">
     <div class="copy">
-      <span class="eyebrow">03 · Image circle</span>
-      <h2>The maker's figure, <span class="grad">checked</span>.</h2>
+      <span class="eyebrow" data-n="03">Image circle</span>
+      <h2>The maker's figure, <span class="ac">checked</span>.</h2>
       <p>Every lens carries the image circle its maker publishes. For the <b>704 lenses</b> in the major cine sets, that figure is pinned to the maker's own datasheet, and anything more than <b>0.05 mm</b> off is corrected on the next catalog update. On an 8K VistaVision sensor with a 46.31 mm diagonal, a 0.3 mm error is enough to flip a lens from "covers" to "vignettes", which is why the tolerance is that tight.</p>
     </div>
     <div class="side">
@@ -256,8 +245,8 @@
 
   <section class="sec" id="coverage">
     <div class="copy">
-      <span class="eyebrow">04 · Measured coverage</span>
-      <h2>Lenses don't end in a <span class="grad">hard line</span>.</h2>
+      <span class="eyebrow" data-n="04">Measured coverage</span>
+      <h2>Lenses don't end in a <span class="ac">hard line</span>.</h2>
       <p>A published image circle is one number, but light fades towards the edge, and how far you can push a lens depends on how much fade you'll accept. For <b>282 lenses in 33 sets</b>, Coverage uses measured illumination for each focal instead of the single figure:</p>
       <p><b>D</b> is the diameter where the light falls to 25% of the centre. <b>H</b> is where it falls to 10%: the point where the light runs out.</p>
       <p>The measurements come from ARRI's Lens Illumination Guide, from Hawk, Vantage and Tribe7's published coverage tables, and from our own flat-field measurements, calibrated against ARRI's guide to within about half a millimetre on average. Zooms are measured at several focals and interpolated between them.</p>
@@ -269,8 +258,8 @@
 
   <section class="sec" id="verdict">
     <div class="copy">
-      <span class="eyebrow">05 · The verdict</span>
-      <h2>Covers, tight, or <span class="grad">vignettes</span>.</h2>
+      <span class="eyebrow" data-n="05">The verdict</span>
+      <h2>Covers, tight, or <span class="ac">vignettes</span>.</h2>
       <p>The circle sits centred on the sensor, so the question is whether it reaches the corners, half the diagonal away. With a measurement, the verdict uses D and H; without one, it uses the published circle with a half-millimetre safety margin.</p>
       <div class="rules" aria-label="Verdict rules">
         <div><span class="v bad">Vignette</span><span>d &gt; H (measured), or the circle is smaller than the diagonal</span></div>
@@ -283,59 +272,59 @@
       <div class="figs"><figure class="fig"><svg viewBox="0 0 340 260" role="img" aria-label="Ultra Prime 8mm on Alexa 35 Open Gate: the circle misses the corners">
   <defs><clipPath id="c312"><rect x="0" y="0" width="340" height="260"/></clipPath></defs>
   <g clip-path="url(#c312)">
-  <circle cx="170.0" cy="130.0" r="114.5" fill="none" stroke="rgba(34,211,238,0.35)" stroke-width="1.5" stroke-dasharray="4 5"/>
-  <circle cx="170.0" cy="130.0" r="112.3" fill="rgba(34,211,238,0.07)" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="170.0" cy="130.0" r="114.5" fill="none" stroke="rgba(8,145,178,0.6)" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <circle cx="170.0" cy="130.0" r="112.3" fill="rgba(8,145,178,0.08)" stroke="#d97706" stroke-width="2"/>
   </g>
-  <rect x="69.2" y="60.8" width="201.5" height="138.4" fill="none" stroke="#f2ede2" stroke-width="2"/>
-  <line x1="69.2" y1="199.2" x2="270.8" y2="60.8" stroke="rgba(242,237,226,0.35)" stroke-width="1.2" stroke-dasharray="3 4"/>
-  <circle cx="69.2" cy="60.8" r="5" fill="#f59e0b"/><circle cx="270.8" cy="60.8" r="5" fill="#f59e0b"/><circle cx="69.2" cy="199.2" r="5" fill="#f59e0b"/><circle cx="270.8" cy="199.2" r="5" fill="#f59e0b"/>
+  <rect x="69.2" y="60.8" width="201.5" height="138.4" fill="none" stroke="#0e0f10" stroke-width="2"/>
+  <line x1="69.2" y1="199.2" x2="270.8" y2="60.8" stroke="rgba(14,15,16,0.35)" stroke-width="1.2" stroke-dasharray="3 4"/>
+  <circle cx="69.2" cy="60.8" r="5" fill="#d97706"/><circle cx="270.8" cy="60.8" r="5" fill="#d97706"/><circle cx="69.2" cy="199.2" r="5" fill="#d97706"/><circle cx="270.8" cy="199.2" r="5" fill="#d97706"/>
 </svg><figcaption>Ultra Prime 8 · ⌀ 31.2 / 31.8 mm · diagonal 33.96 mm</figcaption></figure><figure class="fig"><svg viewBox="0 0 340 260" role="img" aria-label="Signature Prime 35mm on Alexa 35 Open Gate: the circle clears the corners">
   <defs><clipPath id="c520"><rect x="0" y="0" width="340" height="260"/></clipPath></defs>
   <g clip-path="url(#c520)">
-  <circle cx="170.0" cy="130.0" r="114.4" fill="none" stroke="rgba(34,211,238,0.35)" stroke-width="1.5" stroke-dasharray="4 5"/>
-  <circle cx="170.0" cy="130.0" r="114.4" fill="rgba(34,211,238,0.07)" stroke="#22d3ee" stroke-width="2"/>
+  <circle cx="170.0" cy="130.0" r="114.4" fill="none" stroke="rgba(8,145,178,0.6)" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <circle cx="170.0" cy="130.0" r="114.4" fill="rgba(8,145,178,0.08)" stroke="#0891b2" stroke-width="2"/>
   </g>
-  <rect x="108.4" y="87.7" width="123.2" height="84.6" fill="none" stroke="#f2ede2" stroke-width="2"/>
-  <line x1="108.4" y1="172.3" x2="231.6" y2="87.7" stroke="rgba(242,237,226,0.35)" stroke-width="1.2" stroke-dasharray="3 4"/>
+  <rect x="108.4" y="87.7" width="123.2" height="84.6" fill="none" stroke="#0e0f10" stroke-width="2"/>
+  <line x1="108.4" y1="172.3" x2="231.6" y2="87.7" stroke="rgba(14,15,16,0.35)" stroke-width="1.2" stroke-dasharray="3 4"/>
   
 </svg><figcaption>Signature Prime 35 · ⌀ 52 mm · diagonal 33.96 mm</figcaption></figure></div>
       <div class="ex warn"><span class="t">Ultra Prime 8mm · Alexa 35 Open Gate</span>D = <b>31.2 mm</b>, H = <b>31.8 mm</b>, d = <b>33.96 mm</b> → d &gt; H → <b>Vignette, 92%</b></div>
-      <div class="ex"><span class="t">Signature Prime 35mm · same mode</span>D = <b>52 mm</b> → <b>Covers, 153%</b></div>
+      <div class="ex ok"><span class="t">Signature Prime 35mm · same mode</span>D = <b>52 mm</b> → <b>Covers, 153%</b></div>
     </div>
   </section>
 
   <section class="sec" id="falloff">
     <div class="copy">
-      <span class="eyebrow">06 · Falloff</span>
-      <h2>A model built for <span class="grad">cine glass</span>.</h2>
+      <span class="eyebrow" data-n="06">Falloff</span>
+      <h2>A model built for <span class="ac">cine glass</span>.</h2>
       <p>The darkening you see in the projection and the viewfinder comes from one falloff model. It follows the lens's coverage circle, its focal length and the T-stop you set: wide lenses lose more at the edge, and stopping down flattens the curve.</p>
       <p>The textbook cos⁴ law treats the focal length as the distance to the exit pupil. On a cine 8mm that predicts about 4.5 stops of loss at the edge, while an Ultra Prime 8 measures about 1.3, so Coverage uses a curve tuned to real cine primes instead. It's a model, not a measured curve for each lens.</p>
     </div>
     <div class="side">
       <div class="formula"><span class="lbl">Light lost at radius x (0 = centre, 1 = edge of the circle), in stops</span>
-        <span class="eq">θ = atan(<i>r</i> ÷ <i>f</i>) &nbsp;<small>r = D ÷ 2</small></span>
+        <span class="eq">θ = atan(<i>r</i> ÷ <i>f</i>) &nbsp;<small class="note">r = D ÷ 2</small></span>
         <span class="eq">E = 0.35 + 1.25 · sin²θ</span>
         <span class="eq">a = clamp(1 − 0.28 · 2·log₂(<i>T</i> ÷ T<small>min</small>), 0.3, 1)</span>
         <span class="eq">L(<i>x</i>) = E · a · (0.55<i>x</i>² + 0.45<i>x</i>⁴)</span>
-        <span class="eq">light = 2<sup>−L</sup> &nbsp;<small>(0 beyond the circle)</small></span>
+        <span class="eq">light = 2<sup>−L</sup> &nbsp;<small class="note">(0 beyond the circle)</small></span>
       </div>
       <figure class="fig"><svg viewBox="0 0 340 220" role="img" aria-label="Modelled light at the image edge: an 8mm loses about 1.3 stops, a 100mm about 0.4">
-  <line x1="34" x2="306" y1="148.0" y2="148.0" stroke="rgba(242,237,226,0.08)"/><text x="28" y="152.0" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#7a766d">25%</text><line x1="34" x2="306" y1="110.0" y2="110.0" stroke="rgba(242,237,226,0.08)"/><text x="28" y="114.0" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#7a766d">50%</text><line x1="34" x2="306" y1="72.0" y2="72.0" stroke="rgba(242,237,226,0.08)"/><text x="28" y="76.0" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#7a766d">75%</text><line x1="34" x2="306" y1="34.0" y2="34.0" stroke="rgba(242,237,226,0.08)"/><text x="28" y="38.0" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#7a766d">100%</text>
-  <line x1="34" x2="306" y1="186" y2="186" stroke="rgba(242,237,226,0.25)"/>
-  <text x="34" y="208" font-family="JetBrains Mono, monospace" font-size="10" fill="#7a766d">centre</text>
-  <text x="306" y="208" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#7a766d">edge of the circle</text>
-  <path d="M34.0,34.0 L40.8,34.0 L47.6,34.1 L54.4,34.1 L61.2,34.2 L68.0,34.4 L74.8,34.5 L81.6,34.7 L88.4,35.0 L95.2,35.3 L102.0,35.6 L108.8,35.9 L115.6,36.3 L122.4,36.7 L129.2,37.2 L136.0,37.7 L142.8,38.3 L149.6,38.9 L156.4,39.5 L163.2,40.3 L170.0,41.0 L176.8,41.9 L183.6,42.8 L190.4,43.7 L197.2,44.7 L204.0,45.8 L210.8,47.0 L217.6,48.2 L224.4,49.6 L231.2,51.0 L238.0,52.4 L244.8,54.0 L251.6,55.6 L258.4,57.3 L265.2,59.2 L272.0,61.0 L278.8,63.0 L285.6,65.1 L292.4,67.3 L299.2,69.5 L306.0,71.8" fill="none" stroke="#a5f3fc" stroke-width="2.5"/>
-  <path d="M34.0,34.0 L40.8,34.0 L47.6,34.2 L54.4,34.4 L61.2,34.8 L68.0,35.2 L74.8,35.8 L81.6,36.4 L88.4,37.2 L95.2,38.0 L102.0,39.0 L108.8,40.1 L115.6,41.3 L122.4,42.7 L129.2,44.1 L136.0,45.7 L142.8,47.4 L149.6,49.3 L156.4,51.3 L163.2,53.4 L170.0,55.7 L176.8,58.1 L183.6,60.6 L190.4,63.3 L197.2,66.2 L204.0,69.2 L210.8,72.3 L217.6,75.6 L224.4,79.0 L231.2,82.5 L238.0,86.1 L244.8,89.8 L251.6,93.6 L258.4,97.5 L265.2,101.5 L272.0,105.5 L278.8,109.6 L285.6,113.7 L292.4,117.8 L299.2,121.9 L306.0,125.9" fill="none" stroke="#22d3ee" stroke-width="2.5"/>
-  <text x="302" y="63.8" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#a5f3fc">100mm · −0.41 stops</text>
-  <text x="302" y="141.9" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#22d3ee">8mm · −1.34 stops</text>
+  <line x1="34" x2="306" y1="148.0" y2="148.0" stroke="rgba(14,15,16,0.12)"/><text x="28" y="152.0" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="10" fill="#5f5e58">25%</text><line x1="34" x2="306" y1="110.0" y2="110.0" stroke="rgba(14,15,16,0.12)"/><text x="28" y="114.0" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="10" fill="#5f5e58">50%</text><line x1="34" x2="306" y1="72.0" y2="72.0" stroke="rgba(14,15,16,0.12)"/><text x="28" y="76.0" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="10" fill="#5f5e58">75%</text><line x1="34" x2="306" y1="34.0" y2="34.0" stroke="rgba(14,15,16,0.12)"/><text x="28" y="38.0" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="10" fill="#5f5e58">100%</text>
+  <line x1="34" x2="306" y1="186" y2="186" stroke="rgba(14,15,16,0.45)"/>
+  <text x="34" y="208" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="10" fill="#5f5e58">centre</text>
+  <text x="306" y="208" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="10" fill="#5f5e58">edge of the circle</text>
+  <path d="M34.0,34.0 L40.8,34.0 L47.6,34.1 L54.4,34.1 L61.2,34.2 L68.0,34.4 L74.8,34.5 L81.6,34.7 L88.4,35.0 L95.2,35.3 L102.0,35.6 L108.8,35.9 L115.6,36.3 L122.4,36.7 L129.2,37.2 L136.0,37.7 L142.8,38.3 L149.6,38.9 L156.4,39.5 L163.2,40.3 L170.0,41.0 L176.8,41.9 L183.6,42.8 L190.4,43.7 L197.2,44.7 L204.0,45.8 L210.8,47.0 L217.6,48.2 L224.4,49.6 L231.2,51.0 L238.0,52.4 L244.8,54.0 L251.6,55.6 L258.4,57.3 L265.2,59.2 L272.0,61.0 L278.8,63.0 L285.6,65.1 L292.4,67.3 L299.2,69.5 L306.0,71.8" fill="none" stroke="#0e0f10" stroke-width="2.5"/>
+  <path d="M34.0,34.0 L40.8,34.0 L47.6,34.2 L54.4,34.4 L61.2,34.8 L68.0,35.2 L74.8,35.8 L81.6,36.4 L88.4,37.2 L95.2,38.0 L102.0,39.0 L108.8,40.1 L115.6,41.3 L122.4,42.7 L129.2,44.1 L136.0,45.7 L142.8,47.4 L149.6,49.3 L156.4,51.3 L163.2,53.4 L170.0,55.7 L176.8,58.1 L183.6,60.6 L190.4,63.3 L197.2,66.2 L204.0,69.2 L210.8,72.3 L217.6,75.6 L224.4,79.0 L231.2,82.5 L238.0,86.1 L244.8,89.8 L251.6,93.6 L258.4,97.5 L265.2,101.5 L272.0,105.5 L278.8,109.6 L285.6,113.7 L292.4,117.8 L299.2,121.9 L306.0,125.9" fill="none" stroke="#0891b2" stroke-width="2.5"/>
+  <text x="302" y="41" text-anchor="end" stroke="#e9e8e3" stroke-width="5" paint-order="stroke" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="10.5" fill="#0e0f10">100mm · −0.41 stops</text>
+  <text x="302" y="141.9" text-anchor="end" stroke="#e9e8e3" stroke-width="5" paint-order="stroke" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="10.5" fill="#0891b2">8mm · −1.34 stops</text>
 </svg><figcaption>Light at the edge, wide open (model)</figcaption></figure>
     </div>
   </section>
 
   <section class="sec" id="viewfinder">
     <div class="copy">
-      <span class="eyebrow">07 · Viewfinder</span>
-      <h2>Your phone, zoomed to the <span class="grad">cine lens</span>.</h2>
+      <span class="eyebrow" data-n="07">Viewfinder</span>
+      <h2>Your phone, zoomed to the <span class="ac">cine lens</span>.</h2>
       <p>The iPhone's cameras run as one virtual camera. Coverage works out the frame the cine lens sees on your sensor, then sets the phone's zoom so its live 16:9 picture just covers that frame. iOS hands over between the ultra-wide, wide and tele cameras as the zoom changes.</p>
       <p>When the cine lens sees wider than the phone's widest camera, the live picture sits inside the frame and the border shows the extra field the phone can't capture. Past the phone's longest lens, the picture is enlarged digitally. If your phone's field of view differs from the stock figure, calibrate it in Settings.</p>
     </div>
@@ -351,15 +340,15 @@
 
   <section class="sec" id="dof">
     <div class="copy">
-      <span class="eyebrow">08 · Depth of field</span>
-      <h2>Near, far, <span class="grad">hyperfocal</span>.</h2>
+      <span class="eyebrow" data-n="08">Depth of field</span>
+      <h2>Near, far, <span class="ac">hyperfocal</span>.</h2>
       <p>The viewfinder's focus readout uses the standard thin-lens depth-of-field formulas, with a circle of confusion chosen by format: from 0.015 mm for Super 16 up to 0.045 mm for 65 mm. T-stops step in thirds.</p>
     </div>
     <div class="side">
       <div class="formula"><span class="lbl">Focused at distance u</span>
         <span class="eq">H = <i>f</i>² ÷ (<i>N</i> · <i>c</i>) + <i>f</i></span>
         <span class="eq">near = u(H − f) ÷ (H + u − 2f)</span>
-        <span class="eq">far = u(H − f) ÷ (H − u) &nbsp;<small>(∞ when u ≥ H)</small></span>
+        <span class="eq">far = u(H − f) ÷ (H − u) &nbsp;<small class="note">(∞ when u ≥ H)</small></span>
         <p class="where">N = stop · c = circle of confusion for the format</p>
       </div>
     </div>
@@ -367,8 +356,8 @@
 
   <section class="sec" id="sharpness">
     <div class="copy">
-      <span class="eyebrow">09 · Sharpness</span>
-      <h2>MTF50, where it's <span class="grad">known</span>.</h2>
+      <span class="eyebrow" data-n="09">Sharpness</span>
+      <h2>MTF50, where it's <span class="ac">known</span>.</h2>
       <p>Where it's known, a lens shows its MTF50 at the centre and in the corner: the finest detail, in line pairs per millimetre, that still holds half its contrast. That's <b>39 lenses</b> so far. We're adding makers' published MTF charts set by set.</p>
     </div>
     <div class="side">
@@ -378,8 +367,8 @@
 
   <section class="sec" id="rentals">
     <div class="copy">
-      <span class="eyebrow">10 · Who rents it</span>
-      <h2>Read from the houses' <span class="grad">own lists</span>.</h2>
+      <span class="eyebrow" data-n="10">Who rents it</span>
+      <h2>Read from the houses' <span class="ac">own lists</span>.</h2>
       <p>Each of the <b>474 rental houses in 73 countries</b> is linked to the lens sets it lists on its own website. Most lists were last checked on 30 September 2026. Houses can send corrections at any time, and they go into the next update.</p>
     </div>
     <div class="side">
@@ -389,25 +378,25 @@
 
   <section class="sec" id="checks">
     <div class="copy">
-      <span class="eyebrow">11 · Checks</span>
-      <h2>Every change goes through the <span class="grad">same tests</span>.</h2>
+      <span class="eyebrow" data-n="11">Checks</span>
+      <h2>Every change goes through the <span class="ac">same tests</span>.</h2>
       <p>The catalog is validated on every change: no duplicate lenses, every rental link has to point at a real lens set, and retired names are rejected. Audits flag any image circle outside the usual range for its format, and any lens that sits far from the rest of its set, so a typo can't hide.</p>
     </div>
     <div class="side">
       <div class="rules" aria-label="Format ranges used by the audit">
-        <div><span class="v ok">S16</span><span>image circle 12–18 mm</span></div>
-        <div><span class="v ok">S35</span><span>27–37 mm</span></div>
-        <div><span class="v ok">S35+</span><span>32–40 mm</span></div>
-        <div><span class="v ok">FF · VV</span><span>40–48 mm</span></div>
-        <div><span class="v ok">LF</span><span>40–50 mm</span></div>
-        <div><span class="v ok">65</span><span>52–75 mm</span></div>
+        <div><span class="v">S16</span><span>image circle 12–18 mm</span></div>
+        <div><span class="v">S35</span><span>27–37 mm</span></div>
+        <div><span class="v">S35+</span><span>32–40 mm</span></div>
+        <div><span class="v">FF · VV</span><span>40–48 mm</span></div>
+        <div><span class="v">LF</span><span>40–50 mm</span></div>
+        <div><span class="v">65</span><span>52–75 mm</span></div>
       </div>
     </div>
   </section>
 
   <section class="end" aria-labelledby="fix">
     <span class="eyebrow">Corrections</span>
-    <h2 id="fix">Spotted a number that's <span class="grad">off</span>?</h2>
+    <h2 id="fix">Spotted a number that's <span class="ac">off</span>?</h2>
     <p>Write with the lens, the camera mode and your source. Corrections go into the next update.</p>
     <span class="addr">support@coverage-app.xyz</span>
   </section>
@@ -417,10 +406,11 @@
   <nav class="help-links" aria-label="Help and legal">
     <a href="/support/">Support</a><a href="/how-it-works/" aria-current="page">How it works</a><a href="/press/">Press</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a><a href="/legal/">Legal notice</a><a href="https://www.instagram.com/coverageapp__/" rel="me noopener" target="_blank">Instagram @coverageapp__</a>
   </nav>
-  <footer>
+  <footer class="micro">
     <span>© 2026 Coverage</span>
     <span>support@coverage-app.xyz</span>
   </footer>
+  <div class="bigmark" aria-hidden="true"><span>Coverage</span></div>
 </div>
 
 <script>
