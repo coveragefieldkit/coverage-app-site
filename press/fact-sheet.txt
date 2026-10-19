@@ -37,7 +37,7 @@ bodies and 749 sensor modes.
 
 On set, the director's viewfinder zooms the phone's cameras to the cine
 lens's field of view and draws framelines and camera settings over the
-live image. Stills and clips are saved with the lens, framelines, focus,
+live image. Stills and clips are saved with the lens, framelines,
 camera settings, tilt, compass heading and GPS. Every lens page lists the
 rental houses that carry it: 474 in 73 countries.
 
@@ -52,8 +52,8 @@ FEATURES
 - Compare A|B: two lenses or two cameras side by side, specs row for row.
 - Director's viewfinder: the phone's cameras zoom to the cine lens's field
   of view, with framelines, a camera-settings HUD and looks (LUTs).
-- Stills and clips saved with lens, framelines, focus, camera settings,
-  tilt, compass heading and GPS.
+- Stills and clips saved with lens, framelines, camera settings, tilt,
+  compass heading and GPS.
 - Shot log and shot-list PDF.
 - Projects with crew credits and lens lists.
 - Print-ready A4 lens reports and landscape A|B comparison sheets.
