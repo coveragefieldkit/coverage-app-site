@@ -83,7 +83,7 @@ viewfinder/                    Four viewfinder frames, 2000 x 920 PNG
   vf-signs.png                 Roadside
   vf-cliff.png                 Coast
 
-The viewfinder frames are phone captures: an ARRI/ZEISS Standard T2.1
-40mm on a RED Komodo 6K (6K 17:9) with a 2.39 frameline.
+The viewfinder frames are iPhone captures through the viewfinder, with a
+2.39 frameline. They show framing, not a particular lens's look.
 
 Online: https://coverage-app.xyz/press/
