@@ -18,8 +18,8 @@ Launch price     €19.99 / $19.99 until 15 November 2026
 Regular price    €24.99 / $24.99
 Subscription     None
 Family Sharing   Yes
-Lens catalog     2,075 lenses: primes, zooms, anamorphics, rehousings
-Cameras          71 camera bodies, 749 sensor modes
+Lens catalog     2,408 lenses: primes, zooms, anamorphics, rehousings
+Cameras          73 camera bodies, 759 sensor modes
 Rental houses    474 rental houses in 73 countries
 Developer        Daniel Ocanto Hernandez, independent developer
 Website          https://coverage-app.xyz
@@ -32,8 +32,8 @@ ABOUT
 Coverage is an iPhone app for the camera department. Pick a
 camera, a sensor mode and a lens, and it draws the image circle that lens
 throws onto that sensor, to scale, with light falloff and a warning when
-the corners vignette. The catalog holds 2,075 cine lenses, 71 camera
-bodies and 749 sensor modes.
+the corners vignette. The catalog holds 2,408 cine lenses, 73 camera
+bodies and 759 sensor modes.
 
 On set, the director's viewfinder zooms the phone's cameras to the cine
 lens's field of view and draws framelines and camera settings over the
