@@ -197,14 +197,10 @@
   .tile:hover .file .t { color: var(--signal); }
 
   .shots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px) clamp(12px, 1.6vw, 20px); }
-  @media (max-width: 1000px) { .shots { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (max-width: 640px) { .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .shots-all { margin-top: clamp(24px, 3vw, 36px); }
   .shots .pic { aspect-ratio: 1320 / 2868; }
   .shots .pic img { width: 100%; height: 100%; object-fit: cover; }
-  .shots .all .pic { display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 12px; padding: 18px; background: var(--paper); color: var(--ink); border-color: var(--paper); }
-  .shots .all .note { color: var(--ink-3); }
-  .shots .all .big { font-weight: 400; font-size: clamp(22px, 2vw, 28px); line-height: 1.05; letter-spacing: -0.025em; }
-  .shots .all .arr { font-weight: 500; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--link-ink); }
 
   .frames { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 28px); }
   @media (max-width: 640px) { .frames { grid-template-columns: 1fr; } }
@@ -286,7 +282,7 @@
         <p class="lede rise" style="--d:3">The camera department's field kit for iPhone. Put any cine lens on any sensor, see its coverage, falloff and framing, take it to set through a director's viewfinder on your phone, and find who rents it.</p>
         <p class="readout micro rise" style="--d:4"><span class="on">Out on the App Store · 3 November 2026</span><span><b>iPhone</b></span><span>7-day trial, then one purchase</span></p>
         <div class="hero-actions rise" style="--d:5">
-          <a class="btn btn-primary" href="coverage-field-kit-press-kit.zip" download>Download press kit <span class="meta">ZIP · 8.8 MB</span> <span class="arr" aria-hidden="true">↓</span></a>
+          <a class="btn btn-primary" href="coverage-field-kit-press-kit.zip" download>Download press kit <span class="meta">ZIP · 9.3 MB</span> <span class="arr" aria-hidden="true">↓</span></a>
           <a class="btn btn-ghost" href="fact-sheet.txt">Fact sheet <span class="meta">TXT</span></a>
         </div>
       </div>
@@ -378,20 +374,21 @@
       <div class="head">
         <span class="eyebrow" data-n="03">Screenshots</span>
         <h2>App Store screenshots.</h2>
-        <p class="lede">Nine PNGs at 1320 × 2868, the set used on the App Store. Each one opens the full-size file.</p>
+        <p class="lede">Ten PNGs at 1320 × 2868, the set on the App Store since 1.2. Each one opens the full-size file.</p>
       </div>
       <div class="shots">
-        <a class="tile" href="screenshots/01-viewfinder.png"><div class="pic"><img src="thumbs/01-viewfinder.webp" alt="App Store screenshot: Director's viewfinder, four landscape frames shot through a cine lens with framelines and camera settings" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>01</b>Director's viewfinder</span><span class="s">PNG · 1.1 MB</span></span></a>
-        <a class="tile" href="screenshots/02-coverage.png"><div class="pic"><img src="thumbs/02-coverage.webp" alt="App Store screenshot: Coverage projection of a lens on an ARRI Alexa 35 with a vignette warning" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>02</b>Coverage and falloff</span><span class="s">PNG · 517 KB</span></span></a>
-        <a class="tile" href="screenshots/03-shots.png"><div class="pic"><img src="thumbs/03-shots.webp" alt="App Store screenshot: Shot log detail, a saved frame with its lens, camera and settings" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>03</b>Shot log</span><span class="s">PNG · 727 KB</span></span></a>
-        <a class="tile" href="screenshots/04-rentals.png"><div class="pic"><img src="thumbs/04-rentals.webp" alt="App Store screenshot: Rent this lens, rental houses that carry a lens listed by country" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>04</b>Rent this lens</span><span class="s">PNG · 224 KB</span></span></a>
-        <a class="tile" href="screenshots/05-compare.png"><div class="pic"><img src="thumbs/05-compare.webp" alt="App Store screenshot: Compare A|B, two lens projections on the same sensor, one above the other" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>05</b>Compare A|B</span><span class="s">PNG · 632 KB</span></span></a>
-        <a class="tile" href="screenshots/06-lenses.png"><div class="pic"><img src="thumbs/06-lenses.webp" alt="App Store screenshot: Lens catalog, every focal in the ARRI Signature Prime set" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>06</b>Lens catalog</span><span class="s">PNG · 201 KB</span></span></a>
-        <a class="tile" href="screenshots/07-project.png"><div class="pic"><img src="thumbs/07-project.webp" alt="App Store screenshot: Project with crew credits and a lens list" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>07</b>Projects</span><span class="s">PNG · 208 KB</span></span></a>
-        <a class="tile" href="screenshots/08-report.png"><div class="pic"><img src="thumbs/08-report.webp" alt="App Store screenshot: Print-ready A4 lens report" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>08</b>Lens report</span><span class="s">PNG · 425 KB</span></span></a>
-        <a class="tile" href="screenshots/09-home.png"><div class="pic"><img src="thumbs/09-home.webp" alt="App Store screenshot: Home screen with the current setup and a shortcut to the director's viewfinder" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>09</b>Home</span><span class="s">PNG · 515 KB</span></span></a>
-        <a class="tile all" href="coverage-field-kit-press-kit.zip" download><div class="pic"><span class="note micro">All nine</span><span class="big">In the press kit ZIP</span><span class="arr">Download ↓</span></div><span class="file"><span class="t">Every asset on this page</span><span class="s">ZIP · 8.8 MB</span></span></a>
+        <a class="tile" href="screenshots/01-viewfinder.png"><div class="pic"><img src="thumbs/01-viewfinder.webp" alt="App Store screenshot: Director's viewfinder, four landscape frames with framelines and camera settings" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>01</b>Director's viewfinder</span><span class="s">PNG · 1.1 MB</span></span></a>
+        <a class="tile" href="screenshots/02-coverage.png"><div class="pic"><img src="thumbs/02-coverage.webp" alt="App Store screenshot: Does it cover? A lens projection on an ARRI Alexa 35 with light falloff and a vignette warning" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>02</b>Coverage and falloff</span><span class="s">PNG · 538 KB</span></span></a>
+        <a class="tile" href="screenshots/03-expander.png"><div class="pic"><img src="thumbs/03-expander.webp" alt="App Store screenshot: Doesn't cover? Expand it. A lens that vignettes on LF Open Gate covers with a 1.66x expander behind it" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>03</b>Expanders</span><span class="s">PNG · 622 KB</span></span></a>
+        <a class="tile" href="screenshots/04-rentals.png"><div class="pic"><img src="thumbs/04-rentals.webp" alt="App Store screenshot: Rent this lens, rental houses that carry a lens listed by country" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>04</b>Rent this lens</span><span class="s">PNG · 223 KB</span></span></a>
+        <a class="tile" href="screenshots/05-sun.png"><div class="pic"><img src="thumbs/05-sun.webp" alt="App Store screenshot: Where will the sun be? The day's sun path over four viewfinder frames" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>05</b>Sun path</span><span class="s">PNG · 1.0 MB</span></span></a>
+        <a class="tile" href="screenshots/06-matte-box.png"><div class="pic"><img src="thumbs/06-matte-box.webp" alt="App Store screenshot: Matte box in shot? Three matte boxes checked against a lens wide open" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>06</b>Matte box check</span><span class="s">PNG · 509 KB</span></span></a>
+        <a class="tile" href="screenshots/07-project.png"><div class="pic"><img src="thumbs/07-project.webp" alt="App Store screenshot: Project with crew credits and a lens list" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>07</b>Projects</span><span class="s">PNG · 204 KB</span></span></a>
+        <a class="tile" href="screenshots/08-shots.png"><div class="pic"><img src="thumbs/08-shots.webp" alt="App Store screenshot: Shot log detail, a saved frame of the test chart with its setup" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>08</b>Shot log</span><span class="s">PNG · 327 KB</span></span></a>
+        <a class="tile" href="screenshots/09-lenses.png"><div class="pic"><img src="thumbs/09-lenses.webp" alt="App Store screenshot: Lens catalog, every focal in the ARRI Signature Prime set" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>09</b>Lens catalog</span><span class="s">PNG · 191 KB</span></span></a>
+        <a class="tile" href="screenshots/10-report.png"><div class="pic"><img src="thumbs/10-report.webp" alt="App Store screenshot: Print-ready A4 lens report" width="480" height="1043" loading="lazy"></div><span class="file"><span class="t"><b>10</b>Lens report</span><span class="s">PNG · 402 KB</span></span></a>
       </div>
+      <div class="shots-all"><a class="btn btn-primary" href="coverage-field-kit-press-kit.zip" download>All ten in the press kit <span class="meta">ZIP · 9.3 MB</span> <span class="arr" aria-hidden="true">↓</span></a></div>
     </div>
   </section>
 
@@ -437,14 +434,14 @@
           <h2>Everything in one file.</h2>
           <ul class="kit-list">
             <li><span>Fact sheet</span><span>TXT</span></li>
-            <li><span>App Store screenshots</span><span>9 × PNG</span></li>
+            <li><span>App Store screenshots</span><span>10 × PNG</span></li>
             <li><span>Viewfinder frames</span><span>4 × PNG</span></li>
             <li><span>App icon, 1024 px</span><span>PNG</span></li>
             <li><span>Logo mark</span><span>SVG</span></li>
             <li><span>Social card, 1200 × 630</span><span>PNG</span></li>
           </ul>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="coverage-field-kit-press-kit.zip" download>Download press kit <span class="meta">ZIP · 8.8 MB</span> <span class="arr" aria-hidden="true">↓</span></a>
+            <a class="btn btn-primary" href="coverage-field-kit-press-kit.zip" download>Download press kit <span class="meta">ZIP · 9.3 MB</span> <span class="arr" aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div class="contact">

@@ -81,16 +81,17 @@ fact-sheet.txt                 This file
 icon-1024.png                  App icon, 1024 x 1024 PNG, square and unmasked
 logo-mark.svg                  Logo mark, SVG
 social-card-1200x630.png       Social card, 1200 x 630 PNG
-screenshots/                   Nine App Store screenshots, 1320 x 2868 PNG
+screenshots/                   Ten App Store screenshots, 1320 x 2868 PNG
   01-viewfinder.png            Director's viewfinder
   02-coverage.png              Coverage and falloff
-  03-shots.png                 Shot log
+  03-expander.png              Expanders
   04-rentals.png               Rent this lens
-  05-compare.png               Compare A|B
-  06-lenses.png                Lens catalog
+  05-sun.png                   Sun path
+  06-matte-box.png             Matte box check
   07-project.png               Projects
-  08-report.png                Lens report
-  09-home.png                  Home
+  08-shots.png                 Shot log
+  09-lenses.png                Lens catalog
+  10-report.png                Lens report
 viewfinder/                    Four viewfinder frames, 2000 x 920 PNG
   vf-boats.png                 Harbour
   vf-lamp.png                  Interior
