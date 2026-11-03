@@ -18,7 +18,7 @@ Launch price     €19.99 / $19.99 until 15 November 2026
 Regular price    €24.99 / $24.99
 Subscription     None
 Family Sharing   Yes
-Lens catalog     2,424 lenses: primes, zooms, anamorphics, rehousings
+Lens catalog     2,526 lenses: primes, zooms, anamorphics, rehousings
 Cameras          73 camera bodies, 759 sensor modes
 Rental houses    475 rental houses in 73 countries
 Developer        Daniel Ocanto Hernandez, independent developer
@@ -34,7 +34,7 @@ camera, a sensor mode and a lens, and it draws the image circle that lens
 throws onto that sensor, to scale, with light falloff and a warning when
 the corners vignette. It also checks whether a matte box will show in
 the frame, and what an expander behind the lens does to the focal length,
-T-stop and coverage. The catalog holds 2,424 cine lenses, 73 camera
+T-stop and coverage. The catalog holds 2,526 cine lenses, 73 camera
 bodies and 759 sensor modes.
 
 On set, the director's viewfinder zooms the phone's cameras to the cine
