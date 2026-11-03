@@ -20,7 +20,7 @@ Subscription     None
 Family Sharing   Yes
 Lens catalog     2,424 lenses: primes, zooms, anamorphics, rehousings
 Cameras          73 camera bodies, 759 sensor modes
-Rental houses    474 rental houses in 73 countries
+Rental houses    475 rental houses in 73 countries
 Developer        Daniel Ocanto Hernandez, independent developer
 Website          https://coverage-app.xyz
 Press contact    support@coverage-app.xyz
@@ -42,7 +42,7 @@ lens's field of view and draws framelines, camera settings and the
 day's sun path over the live image, with EI, ND and white balance
 previewed as you change them. Stills and clips are saved with the lens, framelines,
 camera settings, tilt, compass heading and GPS. Every lens page lists the
-rental houses that carry it: 474 in 73 countries.
+rental houses that carry it: 475 in 73 countries.
 
 Coverage is made by Daniel Ocanto Hernandez, an independent
 developer. It is out on the App Store on 3 November 2026.
@@ -71,7 +71,7 @@ FEATURES
 - Shot log and shot-list PDF.
 - Projects with crew credits and lens lists.
 - Print-ready A4 lens reports and landscape A|B comparison sheets.
-- Rent this lens: 474 rental houses in 73 countries, lens by lens.
+- Rent this lens: 475 rental houses in 73 countries, lens by lens.
 - MTF/VFX export: Nuke .nk and CSV.
 
 
