@@ -18,7 +18,7 @@ Launch price     €19.99 / $19.99 until 15 November 2026
 Regular price    €24.99 / $24.99
 Subscription     None
 Family Sharing   Yes
-Lens catalog     2,412 lenses: primes, zooms, anamorphics, rehousings
+Lens catalog     2,424 lenses: primes, zooms, anamorphics, rehousings
 Cameras          73 camera bodies, 759 sensor modes
 Rental houses    474 rental houses in 73 countries
 Developer        Daniel Ocanto Hernandez, independent developer
@@ -32,12 +32,15 @@ ABOUT
 Coverage is an iPhone app for the camera department. Pick a
 camera, a sensor mode and a lens, and it draws the image circle that lens
 throws onto that sensor, to scale, with light falloff and a warning when
-the corners vignette. The catalog holds 2,412 cine lenses, 73 camera
+the corners vignette. It also checks whether a matte box will show in
+the frame, and what an expander behind the lens does to the focal length,
+T-stop and coverage. The catalog holds 2,424 cine lenses, 73 camera
 bodies and 759 sensor modes.
 
 On set, the director's viewfinder zooms the phone's cameras to the cine
-lens's field of view and draws framelines and camera settings over the
-live image. Stills and clips are saved with the lens, framelines,
+lens's field of view and draws framelines, camera settings and the
+day's sun path over the live image, with EI, ND and white balance
+previewed as you change them. Stills and clips are saved with the lens, framelines,
 camera settings, tilt, compass heading and GPS. Every lens page lists the
 rental houses that carry it: 474 in 73 countries.
 
@@ -50,8 +53,19 @@ FEATURES
 - Coverage: any cine lens on any sensor mode, image circle drawn to scale,
   light falloff at the T-stop you set, vignette warnings.
 - Compare A|B: two lenses or two cameras side by side, specs row for row.
+- Matte box check: whether a matte box vignettes wide open or the lens
+  front won't fit. Ten boxes from ARRI, Bright Tangerine, Lightwidow and
+  Tilta. A model from the box's geometry; test borderline setups.
+- Expanders and extenders: 29 rear converters; the new focal length,
+  T-stop and image circle on your sensor. A model from the converter's
+  optics; test borderline setups.
 - Director's viewfinder: the phone's cameras zoom to the cine lens's field
-  of view, with framelines, a camera-settings HUD and looks (LUTs).
+  of view, with framelines, a camera-settings HUD and looks (.cube,
+  ARRI .aml, ASC CDL).
+- Exposure, live: EI, ND and white balance previewed in the viewfinder as
+  you change them. A preview, not a light meter.
+- Sun path: the day's sun path over the frame for any date and time,
+  saved with every shot with sunrise, sunset and golden hour.
 - Stills and clips saved with lens, framelines, camera settings, tilt,
   compass heading and GPS.
 - Shot log and shot-list PDF.

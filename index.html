@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Coverage · Lens coverage and director's viewfinder</title>
-<meta name="description" content="The camera department's field kit for iPhone: any lens on any sensor, its coverage and falloff, a director's viewfinder, and who rents it in 73 countries.">
+<meta name="description" content="The camera department's field kit for iPhone: any lens on any sensor, its coverage and falloff, matte box and expander checks, a director's viewfinder with the sun path, and who rents it in 73 countries.">
 <link rel="canonical" href="https://coverage-app.xyz/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Coverage">
 <meta property="og:title" content="Coverage · Lens coverage and director's viewfinder">
-<meta property="og:description" content="The camera department's field kit for iPhone: any lens on any sensor, its coverage and falloff, a director's viewfinder, and who rents it in 73 countries.">
+<meta property="og:description" content="The camera department's field kit for iPhone: any lens on any sensor, its coverage and falloff, matte box and expander checks, a director's viewfinder with the sun path, and who rents it in 73 countries.">
 <meta property="og:url" content="https://coverage-app.xyz/">
 <meta property="og:image" content="https://coverage-app.xyz/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -304,6 +304,21 @@
   .vf-pick button:focus-visible img { outline: 2px solid var(--signal); outline-offset: 2px; }
   @media (max-width: 520px) { .vf-pick span { display: none; } }
   .vf-log { margin-top: clamp(72px, 10vw, 136px); }
+  /* EI / ND / WB on the app's test chart; same switcher as the frames. */
+  .exp-frame { aspect-ratio: 1400 / 962; border-radius: clamp(14px, 2vw, 22px); overflow: hidden; border: 1px solid var(--rule); background: #000; }
+  .exp-frame .vf-stack { height: 100%; }
+  .vf-pick.exp img { aspect-ratio: 1400 / 962; }
+
+  /* ── around the lens: matte box, expanders, sun ─────── */
+  /* App Store panels cropped on paper; one frame size so the three line up. */
+  .feat-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 3.4vw, 48px); align-items: start; }
+  .feat { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .feat-pic { aspect-ratio: 880 / 1675; background: var(--paper); border-radius: 14px; overflow: hidden; display: flex; align-items: center; margin-bottom: 8px; }
+  .feat-pic img { width: 100%; height: auto; display: block; }
+  .feat .tag { color: var(--fog); }
+  .feat p { color: var(--cream-dim); margin: 0; max-width: 44ch; font-size: 16px; }
+  .feat p.note { color: var(--fog); font-size: 13px; }
+  @media (max-width: 900px) { .feat-grid { grid-template-columns: minmax(0, 1fr); gap: 64px; } .feat-pic { max-width: 420px; aspect-ratio: auto; } }
 
   /* ── paper band: numbers + crew ─────────────────────── */
   .paper-band { background: var(--paper); color: var(--ink); padding-block: clamp(72px, 10vw, 140px); }
@@ -429,7 +444,7 @@
   <div class="wrap">
     <div class="strip">
       <div class="strip-head micro">
-        <span class="num">2,412 lenses · 73 cameras · 759 sensor modes</span>
+        <span class="num">2,424 lenses · 73 cameras · 759 sensor modes</span>
         <span>Primes, zooms, anamorphics, rehousings</span>
       </div>
       <div class="marquee" aria-hidden="true">
@@ -492,11 +507,44 @@
     </div>
   </section>
 
+  <!-- AROUND THE LENS: MATTE BOX, EXPANDERS, SUN -->
+  <section class="block" id="around" style="padding-top:0">
+    <div class="wrap">
+      <div class="head split">
+        <span class="eyebrow" data-n="02">Around the lens</span>
+        <h2>The box in front, the converter behind, the sun overhead.</h2>
+        <p class="lede">Three more prep questions, answered before the shoot: will the matte box show, will an expander make it cover, and where will the light be.</p>
+      </div>
+      <div class="feat-grid">
+        <article class="feat reveal">
+          <div class="feat-pic"><img src="img/feat-matte-box.webp" alt="Matte box check on a 4.6K 3:2 Open Gate sensor: an ARRI LMB 4x5 with three stages vignettes at the left and right edges, an LMB 6x6 with two stages is clear wide open, and a Bright Tangerine Misfit Kick won't fit a lens front over 143 mm" width="880" height="1391" loading="lazy"></div>
+          <span class="tag micro">Matte box</span>
+          <h3>Will the box show in the frame?</h3>
+          <p>Pick the matte box and how many stages you're running. Coverage checks it against the lens wide open and tells you which edges would vignette, or that the lens front is too big to fit. Ten boxes from ARRI, Bright Tangerine, Lightwidow and Tilta.</p>
+          <p class="note">A model from the box's geometry and the lens's size. Test borderline setups.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="feat-pic"><img src="img/feat-expander.webp" alt="Expander check: a 32mm that vignettes on LF Open Gate covers with an IB/E Optics 1.66x expander behind it, becoming 53.1mm at T3.3 with a 46.5 mm image circle" width="880" height="1568" loading="lazy"></div>
+          <span class="tag micro">Expanders and extenders</span>
+          <h3>Doesn't cover? Expand it.</h3>
+          <p>Put a rear expander or extender behind the lens and see the new focal length, T-stop and image circle on your sensor. 29 of them, from ARRI, Angénieux, IB/E Optics, Metabones, Duclos and more.</p>
+          <p class="note">A model from the converter's optics. Test borderline setups.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="feat-pic"><img src="img/feat-sun.webp" alt="Sun path drawn over four viewfinder frames, moving through the day with a time slider" width="880" height="1675" loading="lazy"></div>
+          <span class="tag micro">Sun path</span>
+          <h3>Where will the sun be?</h3>
+          <p>The day's sun path over your frame, for any date and time, from where you stand and the way the phone points. Every still and clip keeps it, with the sunrise, sunset and golden hour, and the shot list prints them.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- PREVIEW CARDS -->
   <section class="block" style="padding-top:0" aria-label="App previews">
     <div class="wrap">
       <div class="head" style="margin-bottom:32px">
-        <span class="eyebrow" data-n="02">In the app</span>
+        <span class="eyebrow" data-n="03">In the app</span>
         <h2>Built for prep, carried to set.</h2>
       </div>
       <div class="cards" tabindex="0" aria-label="Scroll through app previews">
@@ -514,8 +562,8 @@
   <section class="block" id="search" style="padding-top:0">
     <div class="wrap row">
       <div class="copy">
-        <span class="eyebrow" data-n="03">Lens catalog</span>
-        <h2>2,412 lenses. Find the set first.</h2>
+        <span class="eyebrow" data-n="04">Lens catalog</span>
+        <h2>2,424 lenses. Find the set first.</h2>
         <p>Type a series and you get the set. Add a focal and you get the lens. Filter by format, primes or zooms, or show only rehoused glass.</p>
         <div class="queries" aria-label="Search examples">
           <div class="q"><span class="in">supreme</span><span class="out">ZEISS Supreme Prime · 13 focals</span></div>
@@ -535,7 +583,7 @@
   <section class="block" id="rentals" style="padding-top:0">
     <div class="wrap row flip">
       <div class="copy">
-        <span class="eyebrow" data-n="04">Rent this lens</span>
+        <span class="eyebrow" data-n="05">Rent this lens</span>
         <h2>Who has it, anywhere.</h2>
         <p>Every lens page lists the rental houses that carry it, country by country. Each house's lens list is checked against its own website, so the answer is the inventory, not a guess.</p>
         <div class="facts"><span class="chip hi">474 rental houses</span><span class="chip">73 countries</span><span class="chip">Business contact only</span></div>
@@ -551,7 +599,7 @@
   <section class="block" id="exports" style="padding-top:0">
     <div class="wrap row">
       <div class="copy">
-        <span class="eyebrow" data-n="05">Reports</span>
+        <span class="eyebrow" data-n="06">Reports</span>
         <h2>Paper the prep meeting.</h2>
         <p>Export one lens, a whole set or a project as a print-ready A4 report: the projection, coverage, corner light, field of view and full specs. Compare two setups on a single landscape sheet. Shot lists and MTF/VFX packages for the comp lead too.</p>
         <div class="facts"><span class="chip">A4 lens report</span><span class="chip">A|B landscape sheet</span><span class="chip">Shot list PDF</span><span class="chip">Nuke .nk + CSV</span></div>
@@ -567,7 +615,7 @@
   <section class="block" style="padding-top:0">
     <div class="wrap row flip">
       <div class="copy">
-        <span class="eyebrow" data-n="06">Projects</span>
+        <span class="eyebrow" data-n="07">Projects</span>
         <h2>One project, the whole crew.</h2>
         <p>Camera, sensor mode, lens list, framelines and camera settings for the shoot, with the crew credits on every report. Add a whole set in one tap. Share it as a single file, shots included, and it opens straight in a colleague's Coverage.</p>
         <div class="facts"><span class="chip">FPS · shutter · EI · WB</span><span class="chip">2.39 frameline</span><span class="chip">.coverage file</span></div>
@@ -583,7 +631,7 @@
   <section class="block" id="viewfinder" style="padding-top:0">
     <div class="wrap">
       <div class="head split">
-        <span class="eyebrow" data-n="07">Director's viewfinder</span>
+        <span class="eyebrow" data-n="08">Director's viewfinder</span>
         <h2 style="max-width:17ch">Look through the <span class="ac">lens</span> you haven’t rented yet.</h2>
         <p class="lede">The phone's cameras zoom to match the field of view of the cine lens on your sensor, with its falloff, framelines and camera settings drawn over the live image. Stills and clips save with tilt, dutch angle, compass heading, GPS and camera height.</p>
       </div>
@@ -602,11 +650,37 @@
         <button type="button" role="tab" aria-selected="false" data-i="3"><img src="img/vf-cliff.webp" alt="" width="2000" height="920" loading="lazy"><span class="micro" data-n="04">Coast</span></button>
       </div>
 
+      <div class="row vf-log">
+        <div class="copy">
+          <span class="eyebrow">Exposure, live</span>
+          <h3>Change the EI, ND or white balance and the picture follows.</h3>
+          <p>Double the EI and the image comes up a stop. Each 0.3 of ND takes one away. Set 3200K in daylight and it turns blue. It's a preview against your project's settings, not a light meter, and motion blur isn't simulated.</p>
+          <div class="facts"><span class="chip">EI 800 → 3200 · +2.0</span><span class="chip">ND 1.2 · −4.0</span><span class="chip">3200K in daylight</span></div>
+        </div>
+        <div class="reveal">
+          <div class="exp-frame">
+            <div class="vf-stack" id="expStack">
+              <img class="on" src="img/vf-exp-base.webp" alt="Viewfinder on the app's test chart at 24 fps, 180°, EI 800, no ND, 5600K" width="1400" height="962" loading="lazy">
+              <img src="img/vf-exp-ei.webp" alt="The same chart at EI 3200: two stops brighter, EXP +2.0" width="1400" height="962" loading="lazy">
+              <img src="img/vf-exp-nd.webp" alt="The same chart with ND 1.2: four stops darker, EXP −4.0" width="1400" height="962" loading="lazy">
+              <img src="img/vf-exp-wb.webp" alt="The same chart with the white balance at 3200K under daylight: the picture turns blue" width="1400" height="962" loading="lazy">
+            </div>
+          </div>
+          <div class="vf-pick exp" id="expPick" role="tablist" aria-label="Exposure settings">
+            <button type="button" role="tab" aria-selected="true" class="on" data-i="0"><img src="img/vf-exp-base.webp" alt="" width="1400" height="962" loading="lazy"><span class="micro" data-n="01">EI 800</span></button>
+            <button type="button" role="tab" aria-selected="false" data-i="1"><img src="img/vf-exp-ei.webp" alt="" width="1400" height="962" loading="lazy"><span class="micro" data-n="02">EI 3200</span></button>
+            <button type="button" role="tab" aria-selected="false" data-i="2"><img src="img/vf-exp-nd.webp" alt="" width="1400" height="962" loading="lazy"><span class="micro" data-n="03">ND 1.2</span></button>
+            <button type="button" role="tab" aria-selected="false" data-i="3"><img src="img/vf-exp-wb.webp" alt="" width="1400" height="962" loading="lazy"><span class="micro" data-n="04">WB 3200K</span></button>
+          </div>
+        </div>
+      </div>
+
       <div class="row flip vf-log">
         <div class="copy">
           <span class="eyebrow">Shot log</span>
           <h3>Every frame keeps its lens and look.</h3>
-          <p>Each still lands in the gallery with the lens, sensor, framelines and camera settings it was shot with, filed under the project. Export the lot as a shot list PDF.</p>
+          <p>Each still and clip lands in the gallery with the lens, sensor, framelines, camera settings and sun path it was shot with, filed under the project. Open any of them full screen and zoom in, save stills to Photos with the details on a strip underneath, or export the lot as a shot list PDF.</p>
+          <div class="facts"><span class="chip">Your own framelines, 9:16 too</span><span class="chip">Looks: .cube, ARRI .aml, ASC CDL</span><span class="chip">Clips full screen</span></div>
         </div>
         <div class="duo reveal">
           <div class="phone"><div class="screen"><div class="sb" style="--sb:#151517"><span>9:41</span><i></i></div><img src="img/shot-detail.webp" alt="Shot detail: a saved frame with its lens, sensor, framelines and camera settings" width="720" height="1561" loading="lazy"></div><div class="island"></div></div>
@@ -620,13 +694,13 @@
   <section class="paper-band">
     <div class="wrap">
       <div class="stats" aria-label="Catalog in numbers">
-        <div class="stat"><span class="n" data-count="2412">2,412</span><span class="l micro">Lenses</span></div>
+        <div class="stat"><span class="n" data-count="2424">2,424</span><span class="l micro">Lenses</span></div>
         <div class="stat"><span class="n" data-count="73">73</span><span class="l micro">Camera bodies</span></div>
         <div class="stat"><span class="n" data-count="474">474</span><span class="l micro">Rental houses</span></div>
         <div class="stat"><span class="n" data-count="73">73</span><span class="l micro">Countries</span></div>
       </div>
       <div class="head">
-        <span class="eyebrow" data-n="08">Made for the crew</span>
+        <span class="eyebrow" data-n="09">Made for the crew</span>
         <h2>For the department that <span class="ac">owns</span> the frame.</h2>
       </div>
       <div class="roles">
@@ -642,7 +716,7 @@
   <section class="block" id="launch">
     <div class="wrap">
       <div class="head" style="margin-bottom:0">
-        <span class="eyebrow" data-n="09">On the App Store</span>
+        <span class="eyebrow" data-n="10">On the App Store</span>
       </div>
       <div class="beta">
         <div style="display:flex;flex-direction:column;gap:24px">
@@ -701,23 +775,29 @@
 
     // Viewfinder frames: the picker swaps the frame; it advances on its own
     // while in view until the visitor picks one.
-    const vfImgs = [...document.querySelectorAll("#vfStack img")];
-    const vfBtns = [...document.querySelectorAll("#vfPick button")];
-    if (vfImgs.length) {
+    // Viewfinder frames and the exposure chart: one shown at a time, picked below,
+    // stepping on their own while in view until someone picks.
+    const switcher = (stackId, pickId) => {
+      const stack = document.getElementById(stackId);
+      const imgs = [...document.querySelectorAll(`#${stackId} img`)];
+      const btns = [...document.querySelectorAll(`#${pickId} button`)];
+      if (!imgs.length) return;
       let cur = 0, timer = 0, picked = false;
       const show = (i) => {
         cur = i;
-        vfImgs.forEach((im, k) => im.classList.toggle("on", k === i));
-        vfBtns.forEach((b, k) => { b.classList.toggle("on", k === i); b.setAttribute("aria-selected", k === i ? "true" : "false"); });
+        imgs.forEach((im, k) => im.classList.toggle("on", k === i));
+        btns.forEach((b, k) => { b.classList.toggle("on", k === i); b.setAttribute("aria-selected", k === i ? "true" : "false"); });
       };
-      vfBtns.forEach((b, k) => b.addEventListener("click", () => { picked = true; clearInterval(timer); show(k); }));
+      btns.forEach((b, k) => b.addEventListener("click", () => { picked = true; clearInterval(timer); show(k); }));
       if (!reduce && "IntersectionObserver" in window) {
         new IntersectionObserver(([e]) => {
           clearInterval(timer);
-          if (e.isIntersecting && !picked) timer = setInterval(() => show((cur + 1) % vfImgs.length), 4500);
-        }, { threshold: 0.4 }).observe(document.getElementById("vfStack"));
+          if (e.isIntersecting && !picked) timer = setInterval(() => show((cur + 1) % imgs.length), 4500);
+        }, { threshold: 0.4 }).observe(stack);
       }
-    }
+    };
+    switcher("vfStack", "vfPick");
+    switcher("expStack", "expPick");
 
     // Numbers count up once when they come into view (they read correctly at rest).
     if (!reduce && "IntersectionObserver" in window) {
