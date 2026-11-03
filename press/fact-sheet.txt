@@ -54,11 +54,11 @@ FEATURES
   light falloff at the T-stop you set, vignette warnings.
 - Compare A|B: two lenses or two cameras side by side, specs row for row.
 - Matte box check: whether a matte box vignettes wide open or the lens
-  front won't fit. Ten boxes from ARRI, Bright Tangerine, Lightwidow and
-  Tilta. A model from the box's geometry; test borderline setups.
-- Expanders and extenders: 29 rear converters; the new focal length,
-  T-stop and image circle on your sensor. A model from the converter's
-  optics; test borderline setups.
+  front won't fit. Eleven boxes from ARRI, Bright Tangerine and Tilta.
+  A model from the box's geometry; test borderline setups.
+- Expanders, extenders and reducers: 29 rear converters; the new focal
+  length, T-stop and image circle on your sensor. A model from the
+  converter's optics; test borderline setups.
 - Director's viewfinder: the phone's cameras zoom to the cine lens's field
   of view, with framelines, a camera-settings HUD and looks (.cube,
   ARRI .aml, ASC CDL).

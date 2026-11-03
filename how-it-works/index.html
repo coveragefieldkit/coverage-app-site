@@ -196,9 +196,9 @@
   <section class="hero" aria-labelledby="title">
     <span class="eyebrow">How it works</span>
     <h1 id="title">How Coverage <span class="ac">knows.</span></h1>
-    <p class="lede">Every verdict in the app comes from numbers you can check. This is where they come from, and the maths that turns them into a frame, a falloff and a field of view.</p>
+    <p class="lede">Every verdict in the app comes from numbers you can check. This is where they come from, and the maths that turns them into a frame, a falloff, a field of view and a matte box check.</p>
     <nav class="toc" aria-label="On this page">
-      <a href="#sensors">Sensors</a><a href="#fov">Field of view</a><a href="#circle">Image circle</a><a href="#coverage">Measured coverage</a><a href="#verdict">The verdict</a><a href="#falloff">Falloff</a><a href="#viewfinder">Viewfinder</a><a href="#sharpness">Sharpness</a><a href="#rentals">Rentals</a><a href="#checks">Checks</a>
+      <a href="#sensors">Sensors</a><a href="#fov">Field of view</a><a href="#circle">Image circle</a><a href="#coverage">Measured coverage</a><a href="#verdict">The verdict</a><a href="#falloff">Falloff</a><a href="#mattebox">Matte box</a><a href="#expanders">Expanders</a><a href="#viewfinder">Viewfinder</a><a href="#sharpness">Sharpness</a><a href="#rentals">Rentals</a><a href="#checks">Checks</a>
     </nav>
     <div class="nums" aria-label="Catalog">
       <div><b>2,424</b><span>Lenses · 435 sets</span></div>
@@ -323,9 +323,57 @@
     </div>
   </section>
 
+  <section class="sec" id="mattebox">
+    <div class="copy">
+      <span class="eyebrow" data-n="07">Matte box</span>
+      <h2>Does the box cut the frame?</h2>
+      <p>The light that lands on the edge of the sensor leaves the lens at that edge's angle, in a bundle about half the pupil wide. Coverage follows that bundle forward to the deepest filter stage of the matte box and checks that it still fits through the opening. Whichever edge runs out first sets the verdict, so a 4×5.65 tray usually cuts at the sides first.</p>
+      <p>Most lenses have no published entrance-pupil position, so the pupil is placed a tenth of the lens's length behind its front. Stage depths for ARRI's boxes are tuned to agree with the vignetting results ARRI publishes for them on its own lenses. Other makers' boxes take the same depth for the same filter size and number of stages. "Won't fit" means the lens front is wider than the largest clamp ring or back opening the maker lists.</p>
+      <p>It's a model, so test borderline setups. Lenses whose entrance pupil sits far forward, like ARRI's Ultra Wide Zoom, read worse than they are. Flags, side wings, bellows and clamp-on adapter rings aren't modelled, and a zoom is checked at the focal you pick, or at its widest end.</p>
+      <div class="rules" aria-label="Matte box verdicts">
+        <div><span class="v ok">Clear</span><span>the edge bundle fits through the opening</span></div>
+        <div><span class="v tight">Slight</span><span>short by up to 5% of the opening: test it</span></div>
+        <div><span class="v bad">Vignettes</span><span>short by more, named by edge</span></div>
+        <div><span class="v bad">Won't fit</span><span>the lens front is wider than the box takes</span></div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="formula"><span class="lbl">The edge bundle at the deepest stage, per axis</span>
+        <span class="eq"><i>d</i> = 0.1 · <i>L</i> + <i>s</i> &nbsp;<small class="note">L = lens length, s = lens front to the deepest stage</small></span>
+        <span class="eq"><i>r</i> = 0.5 · <i>f</i> ÷ 2<i>T</i> &nbsp;<small class="note">half the bundle</small></span>
+        <span class="eq">half-size = <i>d</i> · tanθ + <i>r</i> &nbsp;<small class="note">tanθ = (w ÷ 2) ÷ f across, (h ÷ 2) ÷ f up</small></span>
+        <span class="eq">margin = (<i>A</i> − half-size) ÷ <i>A</i></span>
+        <p class="where">A = the clear half-opening: filter size × 0.96 ÷ 2. Anamorphics multiply the width by the squeeze. A rotating stage is checked as a circle at the corners.</p>
+      </div>
+      <div class="ex warn"><span class="t">Signature Prime 15mm · T1.8 · Alexa 35 4.6K 3:2 Open Gate · ARRI LMB 4x5, 3 stages</span><i>d</i> = 0.1 × 197 + 40 = <b>59.7 mm</b>; across: 59.7 × 0.933 + 2.08 = <b>57.8 mm</b> against <b>48.8 mm</b> → <b>Vignettes, left and right</b></div>
+      <div class="ex ok"><span class="t">Same lens · ARRI LMB 6x6, 2 stages</span><i>d</i> = <b>69.7 mm</b>; across: <b>67.1 mm</b> against <b>80.5 mm</b> → <b>Clear</b></div>
+      <div class="ex warn"><span class="t">Same lens · Bright Tangerine Misfit Kick</span>Front <b>156 mm</b>, the box takes up to <b>143 mm</b> → <b>Won't fit</b></div>
+    </div>
+  </section>
+
+  <section class="sec" id="expanders">
+    <div class="copy">
+      <span class="eyebrow" data-n="08">Expanders</span>
+      <h2>A converter rescales the lens.</h2>
+      <p>A rear expander, extender or focal reducer magnifies the image the lens throws by its factor, m. The focal length and the image circle grow by m, and the falloff stretches with the circle. The T-stop grows by m too, two stops for a 2x, unless the maker states its own light loss, which Coverage uses instead. Close focus and the lens front stay the same, so the matte box check carries on at the new focal length.</p>
+      <p>Many converters have an optical limit of their own, so the circle is the smaller of m times the lens's circle and the converter's published output circle. Past that, the light is cut, not shaded. Resolution in line pairs per millimetre falls by m.</p>
+      <p>Before a converter goes on, Coverage checks the fit: converters made for particular lenses, the maker's own per-lens list where one is published (IB/E Optics publishes one), the mount, lenses faster than the converter passes cleanly, and reducers that need a full-frame lens. When a lens doesn't cover, the Coverage tab suggests the gentlest converter that makes it cover. There are 29 in the catalog, from IB/E Optics, Angénieux, ARRI, Duclos, Tokina, Metabones and others, plus generic 1.4x, 1.6x, 1.7x, 2x and 0.71x. It's a model from the converter's optics, so test borderline setups.</p>
+    </div>
+    <div class="side">
+      <div class="formula"><span class="lbl">Through a converter of factor m</span>
+        <span class="eq"><i>f</i>′ = <i>m</i> · <i>f</i></span>
+        <span class="eq"><i>D</i>′ = min(<i>m</i> · <i>D</i>, <i>D</i><small>out</small>) &nbsp;<small class="note">D<small>out</small> = the converter's output circle</small></span>
+        <span class="eq"><i>T</i>′ = <i>T</i> · 2<sup>loss ÷ 2</sup> &nbsp;<small class="note">loss = the maker's stated stops, else 2 · log₂ m</small></span>
+        <span class="eq">MTF50′ = MTF50 ÷ <i>m</i></span>
+      </div>
+      <div class="ex warn"><span class="t">Cooke S4/i 32mm · T2 · Mini LF 4.5K LF Open Gate</span>D = <b>33.4 mm</b>, d = <b>44.71 mm</b> → <b>Vignette, 75%</b></div>
+      <div class="ex ok"><span class="t">+ IB/E Optics PLx1.6VV · 1.66x · stated loss 1.46 stops</span><i>f</i>′ = <b>53.1 mm</b>, <i>T</i>′ = <b>T3.3</b>, D′ = min(55.4, 46.5) = <b>46.5 mm</b> → <b>Covers, 104%</b></div>
+    </div>
+  </section>
+
   <section class="sec" id="viewfinder">
     <div class="copy">
-      <span class="eyebrow" data-n="07">Viewfinder</span>
+      <span class="eyebrow" data-n="09">Viewfinder</span>
       <h2>Your phone, zoomed to the cine lens.</h2>
       <p>The iPhone's cameras run as one virtual camera. Coverage works out the frame the cine lens sees on your sensor, then sets the phone's zoom so its live 16:9 picture just covers that frame. iOS hands over between the ultra-wide, wide and tele cameras as the zoom changes.</p>
       <p>When the cine lens sees wider than the phone's widest camera, the live picture sits inside the frame and the border shows the extra field the phone can't capture. Past the phone's longest lens, the picture is enlarged digitally. If your phone's field of view differs from the stock figure, calibrate it in Settings.</p>
@@ -342,7 +390,7 @@
 
   <section class="sec" id="sharpness">
     <div class="copy">
-      <span class="eyebrow" data-n="08">Sharpness</span>
+      <span class="eyebrow" data-n="10">Sharpness</span>
       <h2>MTF50, where it’s known.</h2>
       <p>Where it's known, a lens shows its MTF50 at the centre and in the corner: the finest detail, in line pairs per millimetre, that still holds half its contrast. That's <b>39 lenses</b> so far. We're adding makers' published MTF charts set by set.</p>
     </div>
@@ -353,7 +401,7 @@
 
   <section class="sec" id="rentals">
     <div class="copy">
-      <span class="eyebrow" data-n="09">Who rents it</span>
+      <span class="eyebrow" data-n="11">Who rents it</span>
       <h2>Read from the houses’ own lists.</h2>
       <p>Each of the <b>474 rental houses in 73 countries</b> is linked to the lens sets it lists on its own website. Most lists were last checked on 30 September 2026. Houses can send corrections at any time, and they go into the next update.</p>
     </div>
@@ -364,7 +412,7 @@
 
   <section class="sec" id="checks">
     <div class="copy">
-      <span class="eyebrow" data-n="10">Checks</span>
+      <span class="eyebrow" data-n="12">Checks</span>
       <h2>Every change goes through the same tests.</h2>
       <p>The catalog is validated on every change: no duplicate lenses, every rental link has to point at a real lens set, and retired names are rejected. Audits flag any image circle outside the usual range for its format, and any lens that sits far from the rest of its set, so a typo can't hide.</p>
     </div>
